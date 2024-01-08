@@ -1,0 +1,26 @@
+# Klon et Repositorium
+git clone https://github.com/APP2000Camping/APP2000-gruppe05.git
+
+# Bytt til en Spesifikk Branch
+git checkout branch-navn
+
+# Sjekk Tilgjengelige Brancher
+git branch -a
+
+# Legg til Alle Endringer til Staging Area
+git add .
+
+# Eller legg til en spesifikk fil
+git add path/to/your/file
+
+# Lag en Commit
+git commit -m "Kort beskrivelse" -m "Valgfri detaljert beskrivelse"
+
+# Hent Nyeste Endringer fra Repositoriet
+git pull origin branch-navn
+
+# Push Endringer til Repositoriet
+git push origin branch-navn
+
+# Eksempel på Commit-melding
+git commit -m "Legg til nytt søkefelt" -m "Implementerer et responsivt søkefelt i brukergrensesnittet for forbedret brukeropplevelse."
