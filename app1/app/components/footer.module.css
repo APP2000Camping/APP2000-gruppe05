@@ -1,0 +1,18 @@
+/* footer.module.css */
+.footer {
+    background-color: #333; /* Mørk bakgrunn */
+    color: white; /* Hvit tekst */
+    padding: 20px; /* Noe innvendig plass */
+    text-align: center; /* Sentrerer teksten */
+  }
+  
+  .footer a {
+    color: white; /* Hvit lenkefarge */
+    text-decoration: none; /* Fjerner understreking fra lenker */
+    margin: 0 10px; /* Margin rundt lenkene */
+  }
+  
+  .footer a:hover {
+    color: #04c; /* Fargeendring ved hover */
+  }
+  

@@ -25,3 +25,10 @@ body {
     )
     rgb(var(--background-start-rgb));
 }
+.footer {
+  width: 100%;
+  padding: 1rem 0; 
+  background-color: #333; 
+  color: white;
+  text-align: center;
+}
