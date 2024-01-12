@@ -14,7 +14,7 @@ const NavBar = () => {
       <ul className={styles.navList}>
         <li className={styles.navItem}>
           <Link href="/about" passHref>
-            OM OSS
+            Om oss
           </Link>
         </li>
         <li className={styles.navItem}>
@@ -24,7 +24,7 @@ const NavBar = () => {
         </li>
         <li className={styles.navItem}>
           <Link href="/contact" passHref>
-            kontakt oss
+            Kontakt oss!
           </Link>
         </li>
       </ul>

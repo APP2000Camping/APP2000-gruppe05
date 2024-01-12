@@ -1,6 +1,6 @@
 require('dotenv').config({ path: '.env.local' });
 
-
+//node app/lib/mongodb.js  for å teste om han greier å koble til mongodb (når du er i cd app1)  
 const { MongoClient, ServerApiVersion } = require('mongodb');
 
 // Bruk URI fra miljøvariabler
