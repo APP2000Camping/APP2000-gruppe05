@@ -10,7 +10,7 @@ const Footer = () => {
             <Link href="/random" passHref>random</Link>
             <Link href="/random1" passHref>Random1</Link>
         </div>
-        <p>© 2024 BrandName. All rights reserved.</p>
+        <p>© 2024 laget av Sondre, Matias, Jesper, Rolf, Marcus.</p>
     </footer>
   );
 };
