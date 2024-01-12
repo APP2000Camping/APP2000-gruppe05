@@ -27,6 +27,11 @@ const NavBar = () => {
             Kontakt oss!
           </Link>
         </li>
+        <li className={styles.navItem}>
+          <Link href="/faq" passHref>
+            FAQ
+          </Link>
+        </li>
       </ul>
     </nav>
   );

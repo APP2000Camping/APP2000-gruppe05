@@ -18,17 +18,20 @@
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
+  background: white(
       to bottom,
       transparent,
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb));
 }
-.footer {
-  width: 100%;
-  padding: 1rem 0; 
-  background-color: #333; 
-  color: white;
-  text-align: center;
+main{
+  color:black;
 }
+h1{
+  display: flex;
+  justify-content: center; /* Senter horisontalt */
+  font-size: 4rem;
+  
+
+  }

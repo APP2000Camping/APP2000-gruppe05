@@ -1,9 +1,13 @@
 /* footer.module.css */
 .footer {
-    background-color: #333; /* Mørk bakgrunn */
-    color: white; /* Hvit tekst */
-    padding: 20px; /* Noe innvendig plass */
-    text-align: center; /* Sentrerer teksten */
+    background-color: #1c6100; 
+    color: white; 
+    padding: 20px; 
+    text-align: center; 
+    flex-shrink: 0;
+    
+
+    
   }
   
   .footer a {
@@ -16,3 +20,5 @@
     color: #04c; /* Fargeendring ved hover */
   }
   
+  
+ 
