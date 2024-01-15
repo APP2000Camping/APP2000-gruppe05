@@ -1,5 +1,6 @@
 "use client";
 // app/faq/page.js
+//laget av sondre
 
 import '../globals.css'; 
 import NavBar from '../components/nav-bar'; 

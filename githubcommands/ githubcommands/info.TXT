@@ -24,3 +24,8 @@ git push origin branch-navn
 
 # Eksempel på Commit-melding
 git commit -m "Legg til nytt søkefelt" -m "Implementerer et responsivt søkefelt i brukergrensesnittet for forbedret brukeropplevelse."
+
+#Hvis <w> [webpack.cache.PackFileCacheStrategy] Caching failed for pack: Error: ENOENT: no such file or directory pga app1/.next/cache/webpack/client-development/2.pack.gz'
+- slett .next mappen og kjør rm -rf .next.
+
+# skriv: node app/lib/mongodb.js  for å teste om han greier å koble til mongodb (når du er i cd app1)  
