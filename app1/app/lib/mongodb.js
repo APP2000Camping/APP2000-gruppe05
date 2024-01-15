@@ -14,7 +14,7 @@ const client = new MongoClient(uri, {
   }
 });
 
-async function connectDatabase() {
+export async function connectDatabase() {
   try {
     await client.connect();
     await client.db("userLogin").command({ ping: 1 });

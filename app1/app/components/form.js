@@ -27,7 +27,7 @@ const Form = ({onSubmit }) => {
         type="text"
         className= {styles.inputField}
         value={password}
-        onChange={()=> setPassword(e.target.value)}
+        onChange={(e)=> setPassword(e.target.value)}
         placeholder = "skriv passord"
         
         />

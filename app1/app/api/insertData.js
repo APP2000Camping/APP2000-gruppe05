@@ -1,6 +1,4 @@
-// pages/api/insertData.js
-
-import { connectDatabase } from '../../mongodb';
+import { connectDatabase } from '../lib/mongodb';
 
 export default async function handler(req, res) {
   if (req.method !== 'POST') {
