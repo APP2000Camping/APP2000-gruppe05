@@ -14,14 +14,14 @@ const client = new MongoClient(uri, {
   }
 });
 
-async function run() {
+async function connectDatabase() {
   try {
     await client.connect();
-    await client.db("admin").command({ ping: 1 });
+    await client.db("userLogin").command({ ping: 1 });
     console.log("Pinged your deployment. You successfully connected to MongoDB!");
   } finally {
     await client.close();
   }
 }
 
-run().catch(console.dir);
+connectDatabase().catch(console.dir);
