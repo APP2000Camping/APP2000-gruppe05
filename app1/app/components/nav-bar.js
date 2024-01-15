@@ -31,6 +31,12 @@ const NavBar = () => {
           <Link href="/faq" passHref>
             FAQ
           </Link>
+          </li>
+          <li className={styles.navItem}>
+          <Link href="/logInn" passHref>
+            Logg inn
+          </Link>
+
         </li>
       </ul>
     </nav>
