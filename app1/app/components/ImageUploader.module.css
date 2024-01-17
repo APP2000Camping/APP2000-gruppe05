@@ -1,0 +1,19 @@
+/* ImageUploader.module.css */
+.ImageUploader {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Style for the input and button */
+.ImageUploader input,
+.ImageUploader button {
+  margin: 10px; /* Add some spacing around the input and button */
+}
+
+/* Style for the image */
+.ImageUploader img {
+  max-width: 100%;
+  height: auto;
+}
