@@ -4,7 +4,7 @@ import "./globals.css";
 
 import NavBar from "../app/components/nav-bar";
 import Footer from "../app/components/footer";
-import ImageUploader from "./components/imageuploader";
+import ImageUploader from "./components/ImageUploader";
 
 
 export default function Home() {
