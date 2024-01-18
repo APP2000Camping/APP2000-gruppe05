@@ -26,7 +26,7 @@ const Form = ({onSubmit }) => {
         />
 
         <input 
-        type="text"
+        type="password"
         className= {styles.inputField}
         value={password}
         onChange={(e)=> setPassword(e.target.value)}
