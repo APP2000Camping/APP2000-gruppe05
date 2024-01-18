@@ -6,6 +6,7 @@ import React from 'react';
 import Form from '../components/form'; // Importer Form-komponenten
 import NavBar from '../components/nav-bar';
 import Footer from '../components/footer';
+//import { routes } from '../routes/index.js';
 
 import '../globals.css';
 
