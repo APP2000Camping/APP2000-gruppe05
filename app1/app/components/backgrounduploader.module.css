@@ -1,0 +1,32 @@
+/* css for backgrounduploader*/
+
+/* BackgroundUploader.module.css */
+
+.imageContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: auto; /* Set the desired height */
+    background-color: #f0f0f0;
+    position: relative;
+  }
+  
+  .mainContent {
+    background-size: cover;
+    background-position: center;
+    height: 100%;
+  }
+  
+  .uploadButtonContainer {
+    position: relative;
+    bottom: 20px; /* Adjust as needed */
+  }
+  
+  .uploadButton {
+    background-color: #06f019;
+    padding: 10px;
+    cursor: pointer;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  

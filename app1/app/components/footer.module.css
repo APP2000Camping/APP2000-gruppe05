@@ -4,7 +4,7 @@
   width: 100%;
   max-width: 80%;
   line-height: 1.5;
-  background-color: rgb(9, 9, 9);
+  background-color:#ffffff;
   margin: auto;  
 }
 .row {
@@ -17,7 +17,7 @@
 }
 .footer { 
   font-family: "Mukta";
-  background-color: rgb(9, 9, 9);
+  background-color:#c0c0c08c;
   padding: 20px 0;
 }
 .footer-col{
@@ -26,22 +26,22 @@
 .footer-col ul li {
   font-family: "Mukta";
   font-size: 20px;
-  color: rgba(239, 239, 239, 0.9);
+  color: rgba(0, 0, 0, 0.9);
   display: block;
   transition: all 0.3s ease;
 }
 .footer-col ul li:hover {
-  color: rgba(255, 255, 255, 1.0);
+  color: rgb(121, 121, 121);
   padding-left: 5px
 }
 .footer-col h4{
   text-transform: capitalize;
   margin-bottom: 20px;
   position: relative;
-  font-size: 20px;
-  color: white;
+  font-size: 25px;
+  color: rgb(0, 0, 0);
   text-decoration-line: underline;
-  text-decoration-color: rgb(245, 5, 55);
+  text-decoration-color: rgb(0, 0, 0);
   text-underline-offset: 10px ;
   text-decoration-thickness: 3px;
 }
@@ -58,8 +58,8 @@
   transition: all 0.5s ease;
 }
 .footer-col .social-links a:hover{
-  color: black;
-  background-color: white;
+  color: rgb(255, 255, 255);
+  background-color: rgb(153, 153, 153);
 }
   
   

@@ -4,7 +4,7 @@ import "./globals.css";
 
 import NavBar from "../app/components/nav-bar";
 import Footer from "../app/components/footer";
-import ImageUploader from "./components/ImageUploader";
+import BackgroundUploader from "./components/backgrounduploader";
 
 
 export default function Home() {
@@ -14,7 +14,7 @@ export default function Home() {
         <NavBar />
         <main className="flex-grow">
           
-          <ImageUploader />
+          <BackgroundUploader />
          
         </main>
         <Footer />

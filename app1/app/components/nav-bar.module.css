@@ -23,75 +23,8 @@
     padding: 0 1rem;
   }
   
-
-  
   .navItem a:hover {
     color: #04c;
   }
   
-   /* Footer */
-
- .container {
-  width: 100%;
-  max-width: 80%;
-  line-height: 1.5;
-  background-color: rgb(9, 9, 9);
-  margin: auto;  
-}
-.row {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  justify-content: space-evenly;
-  padding: 20px;
-  width: 100%;
-}
-.footer { 
-  font-family: "Mukta";
-  background-color: rgb(9, 9, 9);
-  padding: 20px 0;
-}
-.footer-col{
-  width: auto;
-}
-.footer-col ul li {
-  font-family: "Mukta";
-  font-size: 20px;
-  color: rgba(239, 239, 239, 0.9);
-  display: block;
-  transition: all 0.3s ease;
-}
-.footer-col ul li:hover {
-  color: rgba(255, 255, 255, 1.0);
-  padding-left: 5px
-}
-.footer-col h4{
-  text-transform: capitalize;
-  margin-bottom: 20px;
-  position: relative;
-  font-size: 20px;
-  color: white;
-  text-decoration-line: underline;
-  text-decoration-color: rgb(245, 5, 55);
-  text-underline-offset: 10px ;
-  text-decoration-thickness: 3px;
-}
-.footer-col .social-links a{
-  display: inline-block;
-  height: 40px;
-  width: 40px;
-  background-color: rgba(255, 255, 255, 0.2);
-  margin: 0 10px 10px 0;
-  text-align: center;
-  line-height: 40px;
-  border-radius: 50%;
-  color: white;
-  transition: all 0.5s ease;
-}
-.footer-col .social-links a:hover{
-  color: black;
-  background-color: white;
-}
- 
-    
-
+   

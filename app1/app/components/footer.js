@@ -2,6 +2,7 @@ import React from 'react';
 import Link from 'next/link';
 import styles from './footer.module.css';
 
+
 const Footer = () => {
   return (
     <footer className={styles.footer}>
@@ -11,18 +12,28 @@ const Footer = () => {
             <h4>Camping</h4>
             <ul>
               <li>
-                <Link href="index.html" passHref>
+                <Link legacyBehavior href="index.html" passHref>
                   <a className={styles.link}>Om oss</a>
                 </Link>
               </li>
               <li>
-                <Link href="booking.html" passHref>
-                  <a className={styles.link}>Booking</a>
+                <Link legacyBehavior href="tjenester.html" passHref>
+                  <a className={styles.link}>Tjenester</a>
                 </Link>
               </li>
               <li>
-                <Link href="contact.html" passHref>
+                <Link legacyBehavior href="contact.html" passHref>
                   <a className={styles.link}>Kontakt</a>
+                </Link>
+              </li>
+              <li>
+                <Link legacyBehavior href="faq.html" passHref>
+                  <a className={styles.link}>FAQ</a>
+                </Link>
+              </li>
+              <li>
+                <Link legacyBehavior href="loginn.html" passHref>
+                  <a className={styles.link}>Logg inn</a>
                 </Link>
               </li>
             </ul>
@@ -31,21 +42,21 @@ const Footer = () => {
             <h4>© 2024 laget av Sondre, Matias, Jesper, Rolf, Marcus.</h4>
           </div>
           <div className={styles['footer-col']}>
-            <h4>Følg oss</h4>
+            <h4>Utforsk</h4>
             <div className={styles['social-links']}>
-              <Link href="https://www.facebook.com" passHref>
+              <Link legacyBehavior href="https://www.facebook.com" passHref>
                 <a target="_blank" rel="noopener noreferrer">
-                  <i className="fab fa-facebook-f" aria-hidden="true"></i>
+                  <img src='images/faclogo.png' aria-hidden="true"></img>
                 </a>
               </Link>
-              <Link href="https://www.instagram.com" passHref>
+              <Link legacyBehavior href="https://www.instagram.com" passHref>
                 <a target="_blank" rel="noopener noreferrer">
-                  <i className="fab fa-instagram" aria-hidden="true"></i>
+                  <img src='images/inlogo.png' aria-hidden="true"></img>
                 </a>
               </Link>
-              <Link href="https://twitter.com" passHref>
+              <Link legacyBehavior href="https://twitter.com" passHref>
                 <a target="_blank" rel="noopener noreferrer">
-                  <i className="fab fa-twitter" aria-hidden="true"></i>
+                  <img src='images/twlogo.png' aria-hidden="true"></img>
                 </a>
               </Link>
             </div>
