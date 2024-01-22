@@ -1,32 +1,54 @@
-/* css for backgrounduploader*/
+/* backgrounduploader.module.css */
 
-/* BackgroundUploader.module.css */
+/* Container Styles */
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center;
+}
 
-.imageContainer {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: auto; /* Set the desired height */
-    background-color: #f0f0f0;
-    position: relative;
-  }
-  
-  .mainContent {
-    background-size: cover;
-    background-position: center;
-    height: 100%;
-  }
-  
-  .uploadButtonContainer {
-    position: relative;
-    bottom: 20px; /* Adjust as needed */
-  }
-  
-  .uploadButton {
-    background-color: #06f019;
-    padding: 10px;
-    cursor: pointer;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-  }
-  
+/* Heading Styles */
+.h1 {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+
+/* File Input Styles */
+.file {
+  display: none; /* Hide the default file input */
+}
+
+.fileLabel {
+  background-color: #3498db;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Upload Button Styles */
+.uploadButtonContainer {
+  background-color: #2ecc71;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+/* Blob Styles */
+.blobContainer {
+  margin-top: 20px;
+}
+
+.blobUrl {
+  font-size: 1rem;
+  color: #333;
+}
+
+.blobLink {
+  color: #3498db;
+  text-decoration: none;
+}

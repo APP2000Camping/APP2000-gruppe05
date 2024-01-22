@@ -1,55 +1,54 @@
-// BackgroundUploader.js
-import React, { useState } from 'react';
+'use client';
+
+// Import the CSS module
 import styles from './backgrounduploader.module.css';
+import React, { useState, useRef } from 'react';
 
+// BackgroundUploader Component
 const BackgroundUploader = () => {
-  const [backgroundImage, setBackgroundImage] = useState(null);
-
-  const handleImageUpload = (e) => {
-    const file = e.target.files[0];
-    const reader = new FileReader();
-
-    reader.onloadend = () => {
-      setBackgroundImage(reader.result);
-    };
-
-    if (file) {
-      reader.readAsDataURL(file);
-    }
-  };
+  const inputFileRef = useRef(null);
+  const [blob, setBlob] = useState(null);
 
   return (
-    <div style={{ position: 'relative' }}>
-      {/* Your existing navbar */}
-      
-      
-      {/* Grey background area for the image */}
-      <div className={styles.imageContainer}>
-        {/* Main content with background image */}
-        <div
-          className={styles.mainContent}
-          style={{
-            backgroundImage: `url(${backgroundImage})`,
-          }}
-        >
-          {/* Other homepage content */}
-        </div>
+    <div className={styles.container}>
+      <h1>Upload Your Background image</h1>
 
-        {/* Upload button */}
-        <div className={styles.uploadButtonContainer}>
-          <label htmlFor="uploadInput" className={styles.uploadButton}>
-            Last opp bakgrunnbilde
-          </label>
-          <input
-            type="file"
-            id="uploadInput"
-            onChange={handleImageUpload}
-            style={{ display: 'none' }}
-          />
+      <form
+        onSubmit={async (event) => {
+          event.preventDefault();
+
+          const file = inputFileRef.current.files[0];
+
+          const response = await fetch(
+            `/api/file?filename=${file.name}`,
+            {
+              method: 'POST',
+              body: file,
+            },
+          );
+
+          try {
+            const newBlob = await response.json();
+            setBlob(newBlob);
+          } catch (error) {
+            console.error('Error parsing JSON response:', error);
+          }
+        }}
+      >
+        <label className={styles.fileLabel}>
+          Choose File
+          <input className={styles.file} ref={inputFileRef} type="file" required />
+        </label>
+        <button className={styles.uploadButtonContainer} type="submit">Upload</button>
+      </form>
+      {blob && (
+        <div className={styles.blobContainer}>
+          Blob url: <a className={styles.blobLink} href={blob.url}>{blob.url}</a>
         </div>
-      </div>
+      )}
     </div>
   );
 };
 
 export default BackgroundUploader;
+
