@@ -80,6 +80,7 @@ function ImageUploader() {
             contentEditable
             onBlur={handleH1Change}
             className={styles.titleOverlay}
+            suppressContentEditableWarning={true}
           >
             {h1Title}
           </h1>
@@ -93,6 +94,7 @@ function ImageUploader() {
             contentEditable
             onBlur={handleH2Change}
             className={styles.titleOverlay}
+            suppressContentEditableWarning={true}
           >
             {h2Title}
           </h2>

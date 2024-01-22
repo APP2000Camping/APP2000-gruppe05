@@ -6,34 +6,15 @@ import React from 'react';
 import Form from '../components/form'; // Importer Form-komponenten
 import NavBar from '../components/nav-bar';
 import Footer from '../components/footer';
-//import { routes } from '../routes/index.js';
+import { registerUser } from '../lib/db';
 
 import '../globals.css';
 
 
 export default function LogIn() {
   // Denne funksjonen vil bli kalt når brukeren sender inn skjemaet
-  const handleLoginSubmit = async (formData) => {
-    try {
-      const response = await fetch('/api/insertData', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData), // formData inneholder username og password
-      });
-
-      if (!response.ok) {
-        throw new Error('Network response was not ok');
-      }
-
-      // Behandler suksessresponsen her
-      const result = await response.json();
-      console.log('Innlogging vellykket:', result);
-    } catch (error) {
-      // Håndter eventuelle feil her
-      console.error('Innlogging feilet:', error);
-    }
+  const handleLoginSubmit = async (userID, password) => {
+    registerUser(userID, password);
   };
 
   return (
