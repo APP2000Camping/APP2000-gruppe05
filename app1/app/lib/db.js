@@ -1,7 +1,8 @@
-import { config } from "../config/config.js";
+//import { config } from "../config/config.js";
 import { MongoClient } from "mongodb";
+require('dotenv').config();
 
-const client = new MongoClient(config.db.url);
+const client = new MongoClient(process.env.MONGODB_URI);
 
 async function getUsers() {
     let result = {};
