@@ -1,17 +1,17 @@
 'use client';
 
 // Import the CSS module
-import styles from './backgrounduploader.module.css';
+import styles from './uploader.module.css';
 import React, { useState, useRef } from 'react';
 
 // BackgroundUploader Component
-const BackgroundUploader = () => {
+const Uploader = () => {
   const inputFileRef = useRef(null);
   const [blob, setBlob] = useState(null);
 
   return (
     <div className={styles.container}>
-      <h1 className={styles.h1}>Upload Your Background image</h1>
+      
 
       <form
         onSubmit={async (event) => {
@@ -50,5 +50,5 @@ const BackgroundUploader = () => {
   );
 };
 
-export default BackgroundUploader;
+export default Uploader;
 

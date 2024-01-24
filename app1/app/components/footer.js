@@ -59,6 +59,10 @@ const Footer = () => {
                   <img src='images/twlogo.png' aria-hidden="true"></img>
                 </a>
               </Link>
+              <Link className={styles.allFiles} legacyBehavior href="http://localhost:3000/all-files" passHref>
+                <a target="_blank" rel="noopener noreferrer">
+                </a>
+              </Link>
             </div>
           </div>
         </div>

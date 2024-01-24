@@ -2,6 +2,8 @@
 import { list } from '@vercel/blob';
 import styles from './page.module.css';
 import DeleteButton from './delete-button';
+import Uploader from "../components/uploader";
+import Link from 'next/link';
 
 // AllFilesPage component
 export default async function AllFilesPage() {
@@ -14,6 +16,15 @@ export default async function AllFilesPage() {
     return (
         <div>
             <h1 className={styles.h1}>All Files</h1>
+            <Uploader />
+            <div className={styles.container}>
+            <button className={styles.homeButton} type="submit">
+                <Link href="/" passHref>
+                    Home
+                </Link>
+            </button>
+            </div>
+
 
             {/* Iterate over categorized blobs */}
             {Object.entries(categorizedBlobs).map(([category, blobsInCategory]) => (
@@ -27,6 +38,7 @@ export default async function AllFilesPage() {
                     ))}
                 </div>
             ))}
+            
         </div>
     );
 }
