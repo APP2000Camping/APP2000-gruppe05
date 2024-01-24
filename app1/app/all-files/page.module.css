@@ -1,3 +1,19 @@
-.files {
+/* page.module.css */
+
+.categorySection {
+    margin-top: 20px;
+    border: 1px solid #ccc;
+    padding: 10px;
     color: black;
 }
+
+.h1 {
+    color: black;
+}
+
+.files {
+    margin-bottom: 5px;
+    color: black;
+}
+
+/* Add more styles as needed */
