@@ -10,31 +10,31 @@ const Footer = () => {
         <div className={styles.row}>
           <div className={styles['footer-col']}>
             <h4>Camping</h4>
-            <ul>
-              <li>
-                <Link legacyBehavior href="index.html" passHref>
-                  <a className={styles.link}>Om oss</a>
-                </Link>
+            <ul className={styles.footList}>
+              <li className={styles.navItem}>
+                  <Link href="/about" passHref>
+                     Om oss
+                  </Link>
               </li>
-              <li>
-                <Link legacyBehavior href="tjenester.html" passHref>
-                  <a className={styles.link}>Tjenester</a>
-                </Link>
+              <li className={styles.footItem}>
+                 <Link href="/services" passHref>
+                     Tjenester
+                 </Link>
               </li>
-              <li>
-                <Link legacyBehavior href="contact.html" passHref>
-                  <a className={styles.link}>Kontakt</a>
-                </Link>
+              <li className={styles.footItem}>
+                  <Link href="/contact" passHref>
+                     Kontakt oss!
+                  </Link>
               </li>
-              <li>
-                <Link legacyBehavior href="faq.html" passHref>
-                  <a className={styles.link}>FAQ</a>
-                </Link>
+              <li className={styles.footItem}>
+                  <Link href="/faq" passHref>
+                    FAQ
+                 </Link>
               </li>
-              <li>
-                <Link legacyBehavior href="loginn.html" passHref>
-                  <a className={styles.link}>Logg inn</a>
-                </Link>
+                <li className={styles.footItem}>
+                  <Link href="/logInn" passHref>
+                    Logg inn
+                  </Link>
               </li>
             </ul>
           </div>

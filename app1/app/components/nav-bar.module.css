@@ -3,15 +3,24 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0.5rem 1rem;
-    background: #323232;
-    color: #fff;
+    color: #000000;
+    font-family: "Mukta";
+    padding: 10px 0;
   }
   
-  .logo a {
-    color: #fff;
-    text-decoration: none;
+  .logo {
+    color: #000000;
     font-weight: bold;
+    padding: 10px;
+    margin: auto;
+    
+
+  }
+  .resKnapp {
+    color: #000000;
+    font-weight: bold;
+    padding: 10px;
+    margin: auto;
   }
   
   .navList {
@@ -27,4 +36,19 @@
     color: #04c;
   }
   
+  .container {
+    width: 100%;
+    max-width: 80%;
+    line-height: 1.5;
+  }
    
+  .column {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    justify-content: space-evenly;
+    width: 100%;
+  }
+  
+  
+ 
