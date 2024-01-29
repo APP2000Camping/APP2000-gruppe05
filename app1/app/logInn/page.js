@@ -1,30 +1,67 @@
+// laget av Rolf
 "use client";
-// app/logInn/page.js
-//laget av sondre
-
-import React from 'react';
-import Form from '../components/form'; // Importer Form-komponenten
+import { useState } from 'react';
+import '../globals.css';
 import NavBar from '../components/nav-bar';
 import Footer from '../components/footer';
-import { registerUser } from '../lib/db';
+import styles from '../components/form.module.css';
 
-import '../globals.css';
+export default function Home() {
+  // Has to be const, initializes the userID, and password that will be sent through the api
+  const [userID, setUserID] = useState('');
+  const [password, setPassword] = useState('');
 
+  const handleSubmit = async (e) => {
+    e.preventDefault(); // Stops page from refreshing
+    try {
+      // Fetches api
+      const response = await fetch("../api/registerUser", {
+        method: "POST", // POST for sending data to mongodb
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ // Converts javascript value to JSON object
+          "userID": userID,
+          "password": password,
+        }),
+      });
 
-export default function LogIn() {
-  // Denne funksjonen vil bli kalt når brukeren sender inn skjemaet
-  const handleLoginSubmit = async (userID, password) => {
-    registerUser(userID, password);
-  };
+      if (response) {
+        const data = await response.json();
+        console.log(data);
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  }
 
+  // Makes the visual site, plus form
   return (
     <div className="flex flex-col min-h-screen">
       <NavBar />
-      <main className="flex-grow">
-        <h1>Innlogging!</h1>
-        <Form onSubmit={handleLoginSubmit} />
-      </main>
+      <div className = {styles.formContainer}>
+      <form onSubmit = {handleSubmit} className={styles.form}>
+
+      <input
+      type="text"
+      className={styles.inputField}
+      value={userID}
+      onChange={(e)=> setUserID(e.target.value)}
+      placeholder = "Skriv brukernavn"
+      />
+
+      <input 
+      type="text"
+      className= {styles.inputField}
+      value={password}
+      onChange={(e)=> setPassword(e.target.value)}
+      placeholder = "Skriv passord"
+      />
+
+      <button type="submit">Log inn</button>
+      </form>
+      </div>
       <Footer />
     </div>
-  );
+  )
 }

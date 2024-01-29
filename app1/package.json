@@ -2,7 +2,9 @@
   "name": "app",
   "version": "0.1.0",
   "private": true,
-  "type": "module",
+  "browser":{
+    "child_process": false
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
