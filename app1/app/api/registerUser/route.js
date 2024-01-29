@@ -1,14 +1,15 @@
 // Laget av Rolf
 import { MongoClient } from "mongodb";
-import { config } from "../../config/config.js";
 
 // Initializes mongodb client
-const client = new MongoClient(config.db.uri);
+const client = new MongoClient("mongodb+srv://" + process.env.MONGODB_URI);
 const database = client.db("userLogin");
 const users = database.collection("users");
 
 export async function POST(req) {
   try {
+    const dbkeytest = process.env.MONGODB_URI;
+    console.log(dbkeytest);
     const doc = await req.json();
 
     // Stops the process when duplicateCheck() is true
