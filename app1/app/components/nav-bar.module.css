@@ -1,31 +1,59 @@
 /* components/nav-bar.module.css */
 .navBar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0.5rem 1rem;
-    background: #323232;
-    color: #fff;
-  }
-  
-  .logo a {
-    color: #fff;
-    text-decoration: none;
-    font-weight: bold;
-  }
-  
-  .navList {
-    list-style: none;
-    display: flex;
-  }
-  
-  .navItem {
-    padding: 0 1rem;
-  }
-  
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #000000;
+  font-family: "Mukta";
+  padding: 10px 0;
+}
 
-  
-  .navItem a:hover {
-    color: #04c;
-  }
-  
+.logo {
+  color: #000000;
+  padding: 10px;
+  margin: auto;
+  border-radius: 5px;
+}
+.logoImg{
+  width: 200px;
+}
+
+.resKnapp {
+  color: #000000;
+  padding: 10px;
+  margin: auto;
+  font-family:Georgia, 'Times New Roman', Times, serif
+}
+.resKnapp a:hover {
+  color: #ffa300;
+}
+
+.navList {
+  list-style: none;
+  display: flex;
+}
+
+.navItem {
+  padding: 0 1rem;
+  font-family:Georgia, 'Times New Roman', Times, serif
+}
+
+.navItem a:hover {
+  color: #ffa300;
+}
+
+.container {
+  width: 100%;
+  max-width: 80%;
+  line-height: 1.5;
+}
+ 
+.column {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  justify-content: space-evenly;
+  width: 100%;
+}
+
+

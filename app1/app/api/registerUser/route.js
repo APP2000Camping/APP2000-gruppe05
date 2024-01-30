@@ -2,7 +2,7 @@
 import { MongoClient } from "mongodb";
 
 // Initializes mongodb client
-const client = new MongoClient("mongodb+srv://" + process.env.MONGODB_URI);
+const client = new MongoClient(process.env.MONGODB_URI);
 const database = client.db("userLogin");
 const users = database.collection("users");
 
