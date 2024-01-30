@@ -10,7 +10,7 @@ export default function Services() {
   return (
     <div className="flex flex-col min-h-screen">
       <NavBar />
-      <main className="flex-grow">
+      <main className="main">
         <h1>Tjenester</h1>
         <p>her er hvilke tjenester du kan få hos oss</p>
       </main>

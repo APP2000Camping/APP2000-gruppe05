@@ -1,4 +1,4 @@
-// HomePage.js
+// Komponent for å ta i bruk et bilde fra vercel blob storage og fremvise det på hovedsiden
 import React, { useState, useEffect } from 'react';
 import styles from './backgroundpicture.module.css';
 
@@ -8,6 +8,7 @@ const BackgroundPicture = () => {
 
   useEffect(() => {
     // Fetch the default background image from blob storage on component mount
+    // Henter bakgrunnsbilde fra blob storage 
     fetchBackgroundImage();
   }, []); // Run this effect only once on component mount
 

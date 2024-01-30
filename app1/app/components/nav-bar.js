@@ -8,9 +8,11 @@ const NavBar = () => {
     <nav className={styles.navBar}>
       
         <div className={styles.logo}>
-        <Link href="/" passHref>
-          CAMPING
-        </Link>
+        <Link legacyBehavior href="/" passHref>
+                <a target="_blank" rel="noopener noreferrer">
+                  <img src='images/campingplass1.png' aria-hidden="true" className={styles.logoImg}></img>
+                </a>
+                </Link>
         </div>
           <div className={styles.container}>
               <div className={styles.column}>
@@ -45,7 +47,7 @@ const NavBar = () => {
       </div>
       <div className={styles.resKnapp}>
         <Link href="/logInn" passHref>
-          Logg inn
+          Booking
         </Link>
       </div>
     </nav>

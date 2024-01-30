@@ -9,7 +9,7 @@ const Footer = () => {
       <div className={styles.container}>
         <div className={styles.row}>
           <div className={styles['footer-col']}>
-            <h4>Camping</h4>
+          <h4>Campingplass1</h4>
             <ul className={styles.footList}>
               <li className={styles.navItem}>
                   <Link href="/about" passHref>
@@ -23,7 +23,7 @@ const Footer = () => {
               </li>
               <li className={styles.footItem}>
                   <Link href="/contact" passHref>
-                     Kontakt oss!
+                     Kontakt oss
                   </Link>
               </li>
               <li className={styles.footItem}>
@@ -44,23 +44,24 @@ const Footer = () => {
           <div className={styles['footer-col']}>
             <h4>Utforsk</h4>
             <div className={styles['social-links']}>
-              <Link legacyBehavior href="https://www.facebook.com" passHref>
+              <Link legacyBehavior href="https://www.facebook.com"  passHref>
                 <a target="_blank" rel="noopener noreferrer">
-                  <img src='images/faclogo.png' aria-hidden="true"></img>
+                  <img src='images/faclogo.png' aria-hidden="true" className={styles.FooterIconfac}></img>
                 </a>
               </Link>
               <Link legacyBehavior href="https://www.instagram.com" passHref>
                 <a target="_blank" rel="noopener noreferrer">
-                  <img src='images/inlogo.png' aria-hidden="true"></img>
+                  <img src='images/inlogo.png' aria-hidden="true" className={styles.FooterIconin}></img>
                 </a>
               </Link>
               <Link legacyBehavior href="https://twitter.com" passHref>
                 <a target="_blank" rel="noopener noreferrer">
-                  <img src='images/twlogo.png' aria-hidden="true"></img>
+                  <img src='images/twlogo.png' aria-hidden="true"className={styles.FooterIcontw}></img>
                 </a>
               </Link>
               <Link className={styles.allFiles} legacyBehavior href="http://localhost:3000/all-files" passHref>
                 <a target="_blank" rel="noopener noreferrer">
+                <img src='images/admin.png'  aria-hidden="true" className={styles.FooterIconadmin}></img>
                 </a>
               </Link>
             </div>

@@ -3,8 +3,9 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 20px;
     text-align: center;
+    background-color:#ffa200;
+    height: auto;
   }
   
   .BackgroundPicture h1 {

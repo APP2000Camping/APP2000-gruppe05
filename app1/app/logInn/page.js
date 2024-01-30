@@ -39,7 +39,7 @@ export default function LogIn() {
     <div className="flex flex-col min-h-screen">
       <NavBar />
       <main className="flex-grow">
-        <h1>Innlogging!</h1>
+        <h1>Innlogging</h1>
         <Form onSubmit={handleLoginSubmit} />
       </main>
       <Footer />

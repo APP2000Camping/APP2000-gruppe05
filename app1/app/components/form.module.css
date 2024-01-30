@@ -21,17 +21,18 @@
     border-radius: 4px;
   }
   
-  .submitButton {
-    width: 100%;
-    padding: 8px 12px;
-    background-color: #007bff;
-    color: white;
+  .LoggInn {
+    width: auto;
+    padding: 5px;
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
     border: none;
     border-radius: 4px;
     cursor: pointer;
   }
   
-  .submitButton:hover {
-    background-color: #0056b3;
+  .LoggInn:hover {
+    background-color: #00000036;
   }
+  
   
