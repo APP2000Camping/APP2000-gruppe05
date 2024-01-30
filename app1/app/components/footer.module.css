@@ -1,0 +1,83 @@
+/* footer.module.css */
+
+.container {
+  width: 100%;
+  max-width: 80%;
+  line-height: 1.5;
+  background-color:#ffffff;
+  margin: auto; 
+  border-radius: 10px; 
+}
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  justify-content: space-evenly;
+  padding: 20px;
+  width: 100%;
+}
+.footer { 
+  font-family: "Mukta";
+  background-color:#ffa300;
+  padding: 20px 0;
+}
+.footer-col{
+  width: auto;
+}
+.footer-col ul li {
+  font-family: "Mukta";
+  font-size: 20px;
+  color: rgba(0, 0, 0, 0.9);
+  display: block;
+  transition: all 0.3s ease;
+}
+.footer-col ul li:hover {
+  color: #ffa300;
+}
+.footer-col h4{
+text-align: center;
+  margin-bottom: 20px;
+  position: relative;
+  font-size: 25px;
+  color: rgb(0, 0, 0);
+  text-decoration-line: underline;
+  text-decoration-color: rgb(0, 0, 0);
+  text-underline-offset: 10px ;
+  text-decoration-thickness: 3px;
+}
+.footer-col .social-links a{
+  display: inline-block;
+  background-color: rgba(255, 255, 255, 0.2);
+  text-align: center;
+  line-height: 40px;
+  border-radius: 50%;
+  color: white;
+  transition: all 0.5s ease;
+}
+.footer-col .social-links a:hover{
+  color: rgb(255, 255, 255);
+  background-color: #ffa300;
+}
+.FooterIconfac{
+  height: 40px;
+  padding: 5px;
+}
+.FooterIconin{
+  height: 40px;
+  padding: 7px;
+}
+.FooterIcontw{
+  height: 40px;
+  padding: 5px;
+}
+
+.FooterIconadmin {
+  
+  background-color: rgba(255, 255, 255, 0.2);
+  text-align: center;
+  line-height: 40px;
+  border-radius: 50%;
+  color: white;
+  transition: all 0.5s ease;
+  height: 40px;
+}

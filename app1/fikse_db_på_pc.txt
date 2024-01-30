@@ -1,0 +1,19 @@
+1. legg config mappa fra discord inn i app mappa
+
+2. cd app
+
+3. npm init (ja til alt, men bytte entry point til server.js)
+
+4. npm install express
+
+5. npm install cors
+
+6. npm install mongodb
+
+7. Legge til det under inn i .gitignore filen
+
+  # config folder
+  app/config/
+
+8. Åpne server med: node server.js
+  
