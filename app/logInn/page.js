@@ -12,7 +12,7 @@ export default function Home() {
   const [password, setPassword] = useState('');
 
   const handleSubmit = async (e) => {
-    e.preventDefault(); // Stops page from refreshing
+    //e.preventDefault(); // Stops page from refreshing
     try {
       // Fetches api
       const response = await fetch("../api/registerUser", {

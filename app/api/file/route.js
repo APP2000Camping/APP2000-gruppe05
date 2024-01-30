@@ -13,18 +13,16 @@ export async function POST(request) {
   const { searchParams } = new URL(request.url);
   const filename = searchParams.get('filename') || "";
 
-    if(filename){ 
+  if(filename){ 
 
-  
-  const blob = await put(filename, request.body, {
-    access: 'public',
-  });
+    const blob = await put(filename, request.body, {
+      access: 'public',
+    });
 
- 
+    return NextResponse.json(blob);
 
-  return NextResponse.json(blob);
-    }else {
-        return NextResponse.json({message: "No filename detected"});
-    }
+  }else {
+      return NextResponse.json({message: "No filename detected"});
+  }
 }
 
