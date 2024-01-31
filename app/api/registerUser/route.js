@@ -8,14 +8,12 @@ const users = database.collection("users");
 
 export async function POST(req) {
   try {
-    const dbkeytest = process.env.MONGODB_URI;
-    console.log(dbkeytest);
     const doc = await req.json();
 
     // Stopper prossessen når duplicateCheck() er true
     if (await duplicateCheck(doc)) {
       return new Response( JSON.stringify({ response: "User already exists" }), {
-        status: 403, 
+        status: 403,
       })
     }
 
