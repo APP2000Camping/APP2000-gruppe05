@@ -1,5 +1,5 @@
 // components/nav-bar.js
-//kode skrevet av Sondre Matre
+//kode skrevet av Sondre Matre, jesper Eikeland
 import Link from 'next/link';
 import styles from './nav-bar.module.css'; 
 
