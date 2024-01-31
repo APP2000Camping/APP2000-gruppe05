@@ -1,4 +1,4 @@
-// laget av Rolf
+// Skrevet av Rolf
 "use client";
 import { useState } from 'react';
 import '../globals.css';
@@ -7,20 +7,20 @@ import Footer from '../components/footer';
 import styles from '../logInn/login.module.css';
 
 export default function Home() {
-  // Has to be const, initializes the userID, and password that will be sent through the api
+  // Må være const, initialiserer userID og password, vil bli sent gjennom api-en
   const [userID, setUserID] = useState('');
   const [password, setPassword] = useState('');
 
   const handleSubmit = async (e) => {
-    //e.preventDefault(); // Stops page from refreshing
+    //e.preventDefault(); // Stopper siden fra å refreshe
     try {
-      // Fetches api
+      // Kaller på api-en
       const response = await fetch("../api/registerUser", {
-        method: "POST", // POST for sending data to mongodb
+        method: "POST", // POST for å sende data
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ // Converts javascript value to JSON object
+        body: JSON.stringify({ // Konverterer javascript verdi til JSON objekt
           "userID": userID,
           "password": password,
         }),
@@ -35,7 +35,7 @@ export default function Home() {
     }
   }
 
-  // Makes the visual site, plus form
+  // Lager siden med form
   return (
     <div className="flex flex-col min-h-screen">
       <NavBar />

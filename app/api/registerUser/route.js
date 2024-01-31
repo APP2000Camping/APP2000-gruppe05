@@ -1,7 +1,7 @@
-// Laget av Rolf
+// Skrevet av Rolf
 import { MongoClient } from "mongodb";
 
-// Initializes mongodb client
+// Initialiserer mongodb klienten
 const client = new MongoClient(process.env.MONGODB_URI);
 const database = client.db("userLogin");
 const users = database.collection("users");
@@ -12,7 +12,7 @@ export async function POST(req) {
     console.log(dbkeytest);
     const doc = await req.json();
 
-    // Stops the process when duplicateCheck() is true
+    // Stopper prossessen når duplicateCheck() er true
     if (await duplicateCheck(doc)) {
       return new Response( JSON.stringify({ response: "User already exists" }), {
         status: 403, 
