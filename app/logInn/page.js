@@ -4,7 +4,7 @@ import { useState } from 'react';
 import '../globals.css';
 import NavBar from '../components/nav-bar';
 import Footer from '../components/footer';
-import styles from '../components/form.module.css';
+import styles from '../logInn/login.module.css';
 
 export default function Home() {
   // Has to be const, initializes the userID, and password that will be sent through the api
