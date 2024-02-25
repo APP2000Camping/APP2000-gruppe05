@@ -5,14 +5,34 @@ import '../globals.css';
 import NavBar from '../components/nav-bar';
 import Footer from '../components/footer';
 import styles from '../logInn/login.module.css';
+import { useRouter } from 'next/navigation';
+
+let userIDArr = [];
+
+const UserList = () => {
+  return (
+    <ul>
+      {userIDArr.map((user) => (
+        <li key={user.userID}>{user.userID}</li>
+      ))}
+    </ul>
+  )
+}
 
 export default function Home() {
+  
+  const router = useRouter();
+  
+  const refreshData = () => {
+    router.replace(router.asPath);
+  }
+
   // Må være const, initialiserer userID og password, vil bli sent gjennom api-en
   const [userID, setUserID] = useState('');
   const [password, setPassword] = useState('');
 
   const handleSubmit = async (e) => {
-    //e.preventDefault(); // Stopper siden fra å refreshe
+    e.preventDefault(); // Stopper siden fra å refreshe
     try {
       // Kaller på api-en
       const response = await fetch("../api/registerUser", {
@@ -30,8 +50,46 @@ export default function Home() {
         const data = await response.json();
         console.log(data);
       }
-    } catch (error) {
-      console.log(error);
+    } catch (e) {
+      console.log(e);
+    }
+  }
+
+  const handleDelUser = async (e) => {
+    e.preventDefault();
+    try {
+      const response = await fetch("../api/delUser", {
+        method: "DELETE",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          "userID": userID,
+        }),
+      });
+    } catch (e) {
+      console.log(e);
+    }
+  }
+
+  const fillUserIDList = async (e) => {
+    try {
+      const response = await fetch("../api/getUsers", {
+        method: "GET", // GET for å hente data
+        headers: {
+          'Content-Type': 'application/json',
+        }
+      });
+
+      if (response) {
+        userIDArr = (await response.json()).response;
+        console.log(userIDArr);
+      }
+
+      refreshData();
+
+    } catch (e) {
+      console.log(e);
     }
   }
 
@@ -61,7 +119,32 @@ export default function Home() {
       <button type="submit">Log inn</button>
       </form>
       </div>
+
+
+
+      <div className = {styles.formContainer}>
+      <form onSubmit = {handleDelUser} className={styles.form}>
+
+      <input
+      type="text"
+      className={styles.inputField}
+      value={userID}
+      onChange={(e)=> setUserID(e.target.value)}
+      placeholder = "Skriv brukernavn"
+      />
+
+      <button type="submit">Slett Bruker</button>
+      </form>
+      </div>
+
+
+
+      <div id='userlist'>
+        <button onClick={fillUserIDList} className = {styles.button}>Hent brukere</button>
+        <UserList />
+      </div>
+      
       <Footer />
     </div>
-  )
+  );
 }

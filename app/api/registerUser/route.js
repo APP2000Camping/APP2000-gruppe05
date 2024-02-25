@@ -23,7 +23,7 @@ export async function POST(req) {
     await client.close();
 
     return new Response( JSON.stringify({ response: "Inserted document" }), {
-        status: 200,
+        status: 201,
       })
   }
 }
