@@ -1,9 +1,7 @@
 // Skrevet av Rolf
-import { MongoClient } from "mongodb";
+import { getClient } from "@/app/db";
 
-// Initialiserer mongodb klienten
-const client = new MongoClient(process.env.MONGODB_URI);
-const database = client.db("userLogin");
+const database = await getClient();
 const users = database.collection("users");
 
 export async function POST(req) {
@@ -20,7 +18,6 @@ export async function POST(req) {
     const result = await users.insertOne(doc);
     
   } finally {
-    await client.close();
 
     return new Response( JSON.stringify({ response: "Inserted document" }), {
         status: 201,

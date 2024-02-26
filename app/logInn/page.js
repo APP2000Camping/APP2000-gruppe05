@@ -1,11 +1,11 @@
 // Skrevet av Rolf
 "use client";
-import { useState } from 'react';
 import '../globals.css';
 import NavBar from '../components/nav-bar';
 import Footer from '../components/footer';
 import styles from '../logInn/login.module.css';
 import { useRouter } from 'next/navigation';
+import { useEffect, useState } from 'react';
 
 let userIDArr = [];
 
@@ -32,6 +32,7 @@ export default function Home() {
   const [password, setPassword] = useState('');
 
   const handleSubmit = async (e) => {
+    console.log("lagt inn");
     //e.preventDefault(); // Stopper siden fra å refreshe
     try {
       // Kaller på api-en
@@ -46,7 +47,7 @@ export default function Home() {
         }),
       });
 
-      refreshData();
+      
 
       if (response) {
         const data = await response.json();
@@ -58,6 +59,7 @@ export default function Home() {
   }
 
   const handleDelUser = async (e) => {
+    console.log("slett");
     //e.preventDefault();
     try {
       const response = await fetch("../api/delUser", {
@@ -77,7 +79,27 @@ export default function Home() {
     }
   }
 
+    const [data, setData] = useState(null);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const response = await fetch("../api/getUsers", {
+        method: "GET",
+        headers: {
+          'Content-Type': 'application/json',
+        }
+      });
+      const data = await response.json();
+      setData(data);
+    };
+
+    fetchData();
+  }, []);
+
+
+  /*
   const fillUserIDList = async (e) => {
+    console.log("fyll");
     try {
       const response = await fetch("../api/getUsers", {
         method: "GET", // GET for å hente data
@@ -97,6 +119,7 @@ export default function Home() {
       console.log(e);
     }
   }
+  */
 
   // Lager siden med form
   return (
@@ -143,10 +166,8 @@ export default function Home() {
       </div>
 
 
-
-      <div id='userlist'>
-        <button onClick={fillUserIDList} className = {styles.button}>Hent brukere</button>
-        <UserList />
+      <div>
+        {data && <p>{data.message}</p>}
       </div>
       
       <Footer />

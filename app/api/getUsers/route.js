@@ -1,9 +1,7 @@
 // Skrevet av Rolf
-import { MongoClient } from "mongodb";
+import { getClient } from "@/app/db";
 
-// Initialiserer mongodb klienten
-const client = new MongoClient(process.env.MONGODB_URI);
-const database = client.db("userLogin");
+const database = await getClient();
 const users = database.collection("users");
 
 let userArr = [];
@@ -19,7 +17,6 @@ export async function GET() {
 
         console.log(userArr);
     } finally {
-        await client.close();
 
         if (userArr.length === 0) {
             return new Response( JSON.stringify({ response: "No user found" }), {
