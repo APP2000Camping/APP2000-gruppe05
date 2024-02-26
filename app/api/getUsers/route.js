@@ -14,12 +14,11 @@ export async function GET() {
 
         userArr = await cursor.toArray();
 
-
         console.log(userArr);
     } finally {
 
         if (userArr.length === 0) {
-            return new Response( JSON.stringify({ response: "No user found" }), {
+            return new Response( JSON.stringify({ response: "No users found" }), {
                 status: 400,
             });
         } else {
