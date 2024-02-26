@@ -32,7 +32,7 @@ export default function Home() {
   const [password, setPassword] = useState('');
 
   const handleSubmit = async (e) => {
-    e.preventDefault(); // Stopper siden fra å refreshe
+    //e.preventDefault(); // Stopper siden fra å refreshe
     try {
       // Kaller på api-en
       const response = await fetch("../api/registerUser", {
@@ -56,7 +56,7 @@ export default function Home() {
   }
 
   const handleDelUser = async (e) => {
-    e.preventDefault();
+    //e.preventDefault();
     try {
       const response = await fetch("../api/delUser", {
         method: "DELETE",
