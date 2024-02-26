@@ -4,7 +4,6 @@ import '../globals.css';
 import NavBar from '../components/nav-bar';
 import Footer from '../components/footer';
 import styles from '../logInn/login.module.css';
-import { useRouter } from 'next/navigation';
 import { useEffect, useState } from 'react';
 
 let userIDArr = [];
@@ -20,19 +19,13 @@ const UserList = () => {
 }
 
 export default function Home() {
-  
-  const router = useRouter();
-  
-  const refreshData = () => {
-    router.replace(router.asPath);
-  }
 
   // Må være const, initialiserer userID og password, vil bli sent gjennom api-en
   const [userID, setUserID] = useState('');
   const [password, setPassword] = useState('');
 
   const handleSubmit = async (e) => {
-    console.log("lagt inn");
+    console.log("Bruker Lagt inn");
     //e.preventDefault(); // Stopper siden fra å refreshe
     try {
       // Kaller på api-en
@@ -47,8 +40,6 @@ export default function Home() {
         }),
       });
 
-      
-
       if (response) {
         const data = await response.json();
         console.log(data);
@@ -59,7 +50,7 @@ export default function Home() {
   }
 
   const handleDelUser = async (e) => {
-    console.log("slett");
+    console.log("Slettet bruker");
     //e.preventDefault();
     try {
       const response = await fetch("../api/delUser", {
@@ -72,16 +63,16 @@ export default function Home() {
         }),
       });
 
-      refreshData();
-
     } catch (e) {
       console.log(e);
     }
   }
 
-    const [data, setData] = useState(null);
+  /*
+  const [data, setData] = useState(null);
 
   useEffect(() => {
+    console.log("Brukere hentet");
     const fetchData = async () => {
       const response = await fetch("../api/getUsers", {
         method: "GET",
@@ -95,11 +86,12 @@ export default function Home() {
 
     fetchData();
   }, []);
+  */
 
 
-  /*
+  
   const fillUserIDList = async (e) => {
-    console.log("fyll");
+    console.log("Populert userIDList");
     try {
       const response = await fetch("../api/getUsers", {
         method: "GET", // GET for å hente data
@@ -113,13 +105,10 @@ export default function Home() {
         console.log(userIDArr);
       }
 
-      refreshData();
-
     } catch (e) {
       console.log(e);
     }
   }
-  */
 
   // Lager siden med form
   return (
@@ -165,9 +154,9 @@ export default function Home() {
       </form>
       </div>
 
-
       <div>
-        {data && <p>{data.message}</p>}
+        <button className='button' onClick={fillUserIDList}>Hent brukere</button>
+        <UserList />
       </div>
       
       <Footer />

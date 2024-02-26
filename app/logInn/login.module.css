@@ -16,13 +16,11 @@
 }
 
 .button {
+  border: 1px solid #000000;
   display: flex;
   justify-content: center;
   align-items: center;
   height: 50vh;
-  color: black;
-}
-.Header {
   color: black;
 }
 
