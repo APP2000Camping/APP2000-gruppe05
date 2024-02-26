@@ -26,7 +26,7 @@ export default function Home() {
 
   const handleSubmit = async (e) => {
     console.log("Bruker Lagt inn");
-    //e.preventDefault(); // Stopper siden fra å refreshe
+    e.preventDefault(); // Stopper siden fra å refreshe
     try {
       // Kaller på api-en
       const response = await fetch("../api/registerUser", {
@@ -51,7 +51,7 @@ export default function Home() {
 
   const handleDelUser = async (e) => {
     console.log("Slettet bruker");
-    //e.preventDefault();
+    e.preventDefault();
     try {
       const response = await fetch("../api/delUser", {
         method: "DELETE",
@@ -87,8 +87,6 @@ export default function Home() {
     fetchData();
   }, []);
   */
-
-
   
   const fillUserIDList = async (e) => {
     console.log("Populert userIDList");
