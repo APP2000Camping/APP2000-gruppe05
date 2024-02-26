@@ -46,6 +46,8 @@ export default function Home() {
         }),
       });
 
+      refreshData();
+
       if (response) {
         const data = await response.json();
         console.log(data);
@@ -67,6 +69,9 @@ export default function Home() {
           "userID": userID,
         }),
       });
+
+      refreshData();
+
     } catch (e) {
       console.log(e);
     }
