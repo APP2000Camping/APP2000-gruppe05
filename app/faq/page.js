@@ -3,8 +3,6 @@
 //laget av sondre
 
 import '../globals.css'; 
-import NavBar from '../components/nav-bar'; 
-import Footer from '../components/footer'; 
 import Article from '../components/article';
 
 export default function FAQPage() {
@@ -13,6 +11,7 @@ export default function FAQPage() {
       <main className="flex-grow">
       <Article title="Frequently asked questions" content="Her skal ofte spurte spørsmål stå sammen med svaret" />
       </main>
+      <footer />
     </div>
   );
 }

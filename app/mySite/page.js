@@ -11,6 +11,7 @@ export default function Contact() {
         <h1>Min side</h1>
         <p>her er din side</p>
       </main>
+      <footer />
     </div>
   );
 }

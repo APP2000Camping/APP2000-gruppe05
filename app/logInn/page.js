@@ -147,6 +147,7 @@ export default function Home() {
       <button type="submit">Log inn</button>
       </form>
       </div>
+      <footer />
     </div>
   );
 }

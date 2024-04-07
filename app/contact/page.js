@@ -3,8 +3,6 @@
 //laget av sondre
 
 import '../globals.css'; 
-import NavBar from '../components/nav-bar'; 
-import Footer from '../components/footer'; 
 import Article from '../components/article';
 
 export default function Contact() {
@@ -13,6 +11,7 @@ export default function Contact() {
       <main className="flex-grow">
       <Article title="Kontakt oss" content="Her skal det inneholde kontaktinformasjon" />
       </main>
+      <footer />
     </div>
   );
 }

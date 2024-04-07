@@ -2,8 +2,6 @@
 // app/faq/page.js
 
 import '../globals.css'; 
-import NavBar from '../components/nav-bar'; 
-import Footer from '../components/footer'; 
 import Article from '../components/article';
 
 export default function About() {
@@ -12,6 +10,7 @@ export default function About() {
       <main className="flex-grow">
       <Article title="Om oss" content="Her skal det stå informasjon om campingplassen, de som jobber der og mer nyttig informasjon som f.eks adresse, åpningstider osv" />
       </main>
+      <footer />
     </div>
   );
 }

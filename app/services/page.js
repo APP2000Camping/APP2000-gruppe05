@@ -3,8 +3,6 @@
 //laget av sondre
 
 import '../globals.css'; 
-import NavBar from '../components/nav-bar'; 
-import Footer from '../components/footer'; 
 import Article from '../components/article';
 
 export default function Services() {
@@ -13,6 +11,7 @@ export default function Services() {
       <main className="flex-grow">
       <Article title="Tjenester" content="Her skal det stå hvilke tjenester denne campingplassen leverer" />
       </main>
+      <footer />
     </div>
   );
 }
