@@ -1,8 +1,6 @@
 // Skrevet av Rolf
 "use client";
 import '../globals.css';
-import NavBar from '../components/nav-bar';
-import Footer from '../components/footer';
 import styles from '../logInn/login.module.css';
 import { useEffect, useState } from 'react';
 
@@ -49,6 +47,16 @@ export default function Home() {
     }
   }
 
+  const handleLogin = async (e) => {
+    console.log("Login tried");
+    e.preventDefault();
+    try {
+
+    } catch (e) {
+      console.log(e);
+    }
+  }
+/*
   const handleDelUser = async (e) => {
     console.log("Slettet bruker");
     e.preventDefault();
@@ -67,27 +75,9 @@ export default function Home() {
       console.log(e);
     }
   }
-
-  /*
-  const [data, setData] = useState(null);
-
-  useEffect(() => {
-    console.log("Brukere hentet");
-    const fetchData = async () => {
-      const response = await fetch("../api/getUsers", {
-        method: "GET",
-        headers: {
-          'Content-Type': 'application/json',
-        }
-      });
-      const data = await response.json();
-      setData(data);
-    };
-
-    fetchData();
-  }, []);
   */
   
+  /*
   const fillUserIDList = async (e) => {
     console.log("Populert userIDList");
     try {
@@ -107,11 +97,11 @@ export default function Home() {
       console.log(e);
     }
   }
+  */
 
   // Lager siden med form
   return (
     <div className="flex flex-col min-h-screen">
-      <NavBar />
       <div className = {styles.formContainer}>
       <form onSubmit = {handleSubmit} className={styles.form}>
 
@@ -135,10 +125,8 @@ export default function Home() {
       </form>
       </div>
 
-
-
       <div className = {styles.formContainer}>
-      <form onSubmit = {handleDelUser} className={styles.form}>
+      <form onSubmit = {handleLogin} className={styles.form}>
 
       <input
       type="text"
@@ -148,16 +136,17 @@ export default function Home() {
       placeholder = "Skriv brukernavn"
       />
 
-      <button type="submit">Slett Bruker</button>
+      <input 
+      type="password"
+      className= {styles.inputField}
+      value={password}
+      onChange={(e)=> setPassword(e.target.value)}
+      placeholder = "Skriv passord"
+      />
+
+      <button type="submit">Log inn</button>
       </form>
       </div>
-
-      <div>
-        <button className='button' onClick={fillUserIDList}>Hent brukere</button>
-        <UserList />
-      </div>
-      
-      <Footer />
     </div>
   );
 }

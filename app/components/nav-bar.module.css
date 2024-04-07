@@ -14,8 +14,11 @@
   margin: auto;
   border-radius: 5px;
 }
-.logoImg{
+.logoImg {
   width: 200px;
+}
+.profileIcon {
+  width: 35px;
 }
 
 .resKnapp {

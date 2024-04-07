@@ -1,12 +1,14 @@
+'use client';
 // components/nav-bar.js
 //kode skrevet av Sondre Matre, jesper Eikeland
+import { UserButton, useUser } from '@clerk/nextjs';
 import Link from 'next/link';
-import styles from './nav-bar.module.css'; 
+import styles from './nav-bar.module.css';
 
 const NavBar = () => {
+    const {user, isLoaded} = useUser();
   return (
     <nav className={styles.navBar}>
-      
         <div className={styles.logo}>
         <Link legacyBehavior href="/" passHref>
                 <a target="_blank" rel="noopener noreferrer">
@@ -42,14 +44,22 @@ const NavBar = () => {
             Om oss
           </Link>
           </li>
+          <li className={styles.navItem}>
+          <Link href="/booking" passHref>
+            Booking
+          </Link>
+          </li>
         </ul>
         </div>
       </div>
-      <div className={styles.resKnapp}>
-        <Link href="/logInn" passHref>
-          Booking
-        </Link>
-      </div>
+      {
+        isLoaded && user && (
+        <>
+        <div className={styles.res}>
+          <UserButton afterSignOutUrl='/' />
+        </div>
+        </>
+      )}
     </nav>
   );
 };
