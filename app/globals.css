@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
+
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
@@ -18,7 +19,7 @@
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: rgb(255, 255, 255);
+  background: #f7f9fb;
 }
 main{
   color:black;

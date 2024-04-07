@@ -12,7 +12,7 @@ const NavBar = () => {
         <div className={styles.logo}>
         <Link legacyBehavior href="/" passHref>
                 <a target="_blank" rel="noopener noreferrer">
-                  <img src='images/campingplass1.png' aria-hidden="true" className={styles.logoImg}></img>
+                  <img src='images/camping1.png' aria-hidden="true" className={styles.logoImg}></img>
                 </a>
                 </Link>
         </div>

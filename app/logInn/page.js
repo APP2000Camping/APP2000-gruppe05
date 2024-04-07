@@ -121,7 +121,7 @@ export default function Home() {
       placeholder = "Skriv passord"
       />
 
-      <button type="submit">Log inn</button>
+      <button type="submit">Logg inn</button>
       </form>
       </div>
 

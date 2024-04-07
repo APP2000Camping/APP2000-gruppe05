@@ -1,0 +1,22 @@
+.buttonContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.bookingButton {
+    padding: 10px 20px;
+    background-color: #8fc1e3;
+    color: #000000;
+    border-radius: 10px;
+    cursor: pointer;
+    max-width: 100%;
+    justify-content: center;
+    border: 1px solid #000000;
+}
+
+
+.bookingButton:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
