@@ -1,20 +1,21 @@
-"use client";
-// app/faq/page.js
-//laget av sondre
+// booking.js
+import React from 'react';
 
 import '../globals.css'; 
 import NavBar from '../components/nav-bar'; 
 import Footer from '../components/footer'; 
-import Article from '../components/article';
+import BookingForm from '../components/bookingForm';
 
-export default function Contact() {
+const BookingPage = () => {
   return (
     <div className="flex flex-col min-h-screen">
       <NavBar />
       <main className="flex-grow">
-      <Article title="Kontakt oss" content="Her skal det inneholde kontaktinformasjon" />
+      <BookingForm />
       </main>
       <Footer />
     </div>
   );
-}
+};
+
+export default BookingPage;

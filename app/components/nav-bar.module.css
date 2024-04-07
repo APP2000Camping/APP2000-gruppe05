@@ -6,6 +6,8 @@
   color: #000000;
   font-family: "Mukta";
   padding: 10px 0;
+  background-color: #f7f9fb;
+
 }
 
 .logo {
@@ -25,7 +27,7 @@
   font-family:Georgia, 'Times New Roman', Times, serif
 }
 .resKnapp a:hover {
-  color: #ffa300;
+  color: #687864;
 }
 
 .navList {
@@ -39,13 +41,14 @@
 }
 
 .navItem a:hover {
-  color: #ffa300;
+  color: #687864;
 }
 
 .container {
   width: 100%;
   max-width: 80%;
   line-height: 1.5;
+  background-color: #f7f9fb;
 }
  
 .column {
@@ -55,5 +58,11 @@
   justify-content: space-evenly;
   width: 100%;
 }
+
+.logoImg {
+  border-radius: 5px;
+}
+
+
 
 
