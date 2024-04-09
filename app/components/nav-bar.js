@@ -1,12 +1,10 @@
 'use client';
 // components/nav-bar.js
 //kode skrevet av Sondre Matre, jesper Eikeland
-import { UserButton, useUser } from '@clerk/nextjs';
 import Link from 'next/link';
 import styles from './nav-bar.module.css';
 
 const NavBar = () => {
-    const {user, isLoaded} = useUser();
   return (
     <nav className={styles.navBar}>
         <div className={styles.logo}>
@@ -52,14 +50,6 @@ const NavBar = () => {
         </ul>
         </div>
       </div>
-      {
-        isLoaded && user && (
-        <>
-        <div className={styles.res}>
-          <UserButton afterSignOutUrl='/' />
-        </div>
-        </>
-      )}
     </nav>
   );
 };
