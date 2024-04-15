@@ -2,8 +2,6 @@
 import { getClient } from "@/app/db";
 
 
-
-
 const database = await getClient();
 const users = database.collection("Artikler");
 

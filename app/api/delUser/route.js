@@ -16,7 +16,7 @@ export async function DELETE(req) {
     } finally {
 
         return new Response( JSON.stringify({ response: "Deleted document" }), {
-            status: 201,
+            status: 200,
         })
     }
 }
