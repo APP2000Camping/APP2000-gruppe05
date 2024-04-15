@@ -23,6 +23,9 @@ body {
 }
 main{
   color:black;
+  display: inline-flexbox;
+  
+  
 }
 h1{
   display: flex;

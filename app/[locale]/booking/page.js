@@ -1,8 +1,8 @@
 // booking.js
 import React from 'react';
 
-import '../globals.css'; 
-import BookingForm from '../components/bookingForm';
+import '../globals.css';  
+import BookingForm from '../../components/bookingForm';
 
 const BookingPage = () => {
   return (

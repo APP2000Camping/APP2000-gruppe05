@@ -6,29 +6,36 @@
     "child_process": false
   },
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
+    "dev": "i18nexus pull && next dev",
+    "build": "i18nexus pull && next build",
+    "start": "i18nexus pull && next start",
     "lint": "next lint"
   },
   "dependencies": {
     "@nextui-org/react": "^2.2.10",
     "@tinymce/tinymce-react": "^5.0.1",
     "@vercel/blob": "^0.20.0",
+    "accept-language": "^3.0.18",
     "axios": "^1.6.7",
     "cors": "^2.8.5",
     "dotenv": "^16.4.1",
     "express": "^4.18.2",
     "framer-motion": "^11.0.25",
+    "i18next": "^23.11.2",
+    "i18next-resources-to-backend": "^1.2.1",
     "mongodb": "^6.3.0",
     "next": "^14.1.0",
+    "next-i18n-router": "^5.4.0",
+    "next-intl": "^3.11.1",
     "react": "^18",
-    "react-dom": "^18"
+    "react-dom": "^18",
+    "react-i18next": "^14.1.0"
   },
   "devDependencies": {
     "autoprefixer": "^10.0.1",
     "eslint": "^8",
     "eslint-config-next": "14.0.4",
+    "i18nexus-cli": "^3.4.0",
     "postcss": "^8",
     "tailwindcss": "^3.3.0"
   },

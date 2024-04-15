@@ -1,16 +1,17 @@
 'use client';
-// components/nav-bar.js
-//kode skrevet av Sondre Matre, jesper Eikeland
+
 import Link from 'next/link';
 import styles from './nav-bar.module.css';
+import { useTranslation } from 'react-i18next';
 
-const NavBar = () => {
+export default function NavBar() {
+  const {t} = useTranslation();
   return (
     <nav className={styles.navBar}>
         <div className={styles.logo}>
         <Link legacyBehavior href="/" passHref>
                 <a target="_blank" rel="noopener noreferrer">
-                  <img src='images/camping1.png' aria-hidden="true" className={styles.logoImg}></img>
+                  <img src='images\Camping1.png' aria-hidden="true" className={styles.logoImg}></img>
                 </a>
                 </Link>
         </div>
@@ -19,32 +20,32 @@ const NavBar = () => {
                 <ul className={styles.navList}>
                   <li className={styles.navItem}>
                     <Link href="/" passHref>
-                        Hjem
+                        {t('navbar_home')}
                     </Link>
                    </li>
         <li className={styles.navItem}>
           <Link href="/services" passHref>
-            Tjenester
+            {t('navbar_services')}
           </Link>
         </li>
         <li className={styles.navItem}>
           <Link href="/contact" passHref>
-            Kontakt oss
+            {t('navbar_contact')}
           </Link>
         </li>
         <li className={styles.navItem}>
           <Link href="/faq" passHref>
-            FAQ
+            {t('navbar_faq')}
           </Link>
           </li>
           <li className={styles.navItem}>
           <Link href="/about" passHref>
-            Om oss
+            {t('navbar_about')}
           </Link>
           </li>
           <li className={styles.navItem}>
           <Link href="/booking" passHref>
-            Booking
+            {t('common:navbar_booking')}
           </Link>
           </li>
         </ul>
@@ -54,4 +55,3 @@ const NavBar = () => {
   );
 };
 
-export default NavBar;

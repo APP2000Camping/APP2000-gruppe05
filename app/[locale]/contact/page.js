@@ -3,7 +3,7 @@
 //laget av sondre
 
 import '../globals.css'; 
-import Article from '../components/article';
+import Article from '../../components/article';
 
 export default function Contact() {
   return (
