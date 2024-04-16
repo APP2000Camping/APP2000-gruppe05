@@ -1,9 +1,15 @@
+'use client'
 import React from 'react';
 import Link from 'next/link';
 import styles from './footer.module.css';
+import LanguageSwitcher from './LanguageSwitcher';
+import { useTranslation } from 'react-i18next';
 
 
-const Footer = () => {
+
+
+export default function Footer() {
+  const {t} = useTranslation();
   return (
     <footer className={styles.footer}>
       <div className={styles.container}>
@@ -13,36 +19,27 @@ const Footer = () => {
             <ul className={styles.footList}>
               <li className={styles.navItem}>
                   <Link href="/about" passHref>
-                     Om oss
+                  {t('footer_about')}
                   </Link>
               </li>
               <li className={styles.footItem}>
                  <Link href="/services" passHref>
-                     Tjenester
+                 {t('footer_services')}
                  </Link>
               </li>
               <li className={styles.footItem}>
                   <Link href="/contact" passHref>
-                     Kontakt oss
+                  {t('footer_contact')}
                   </Link>
               </li>
-              <li className={styles.footItem}>
-                  <Link href="/faq" passHref>
-                    FAQ
-                 </Link>
-              </li>
-                <li className={styles.footItem}>
-                  <Link href="/logInn" passHref>
-                    Logg inn
-                  </Link>
-              </li>
+              
             </ul>
           </div>
           <div className={styles['footer-col']}>
-            <h4>© 2024 laget av Sondre, Matias, Jesper, Rolf, Marcus.</h4>
+            <h4>{t('footer_madeby')}</h4>
           </div>
           <div className={styles['footer-col']}>
-            <h4>Utforsk</h4>
+            <h4>{t('footer_title2')}</h4>
             <div className={styles['social-links']}>
               <Link legacyBehavior href="https://www.facebook.com"  passHref>
                 <a target="_blank" rel="noopener noreferrer">
@@ -59,12 +56,17 @@ const Footer = () => {
                   <img src='images/twlogo.png' aria-hidden="true"className={styles.FooterIcontw}></img>
                 </a>
               </Link>
+              
             </div>
+            <LanguageSwitcher />
           </div>
+          
         </div>
+        
       </div>
+      
     </footer>
   );
 };
 
-export default Footer;
+

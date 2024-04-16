@@ -4,14 +4,28 @@
 
 import '../globals.css'; 
 import Article from '../../components/article';
+import TranslationsProvider from '../../components/TranslationsProvider';
+import initTranslations from '../../i18n';
 
-export default function Services() {
+
+
+ 
+
+const i18nNamespaces = ['Services', 'Common'];
+
+export default async function Services ({ params:{locale}}) {
+  const { t, resources } = await initTranslations(locale, i18nNamespaces);
+
   return (
+    <TranslationsProvider 
+      resources={resources} 
+      locale={locale} 
+      namespaces={i18nNamespaces}>
     <div className="flex flex-col min-h-screen">
       <main className="flex-grow">
-      <Article title="Tjenester" content="Her skal det stå hvilke tjenester denne campingplassen leverer" />
+      <Article />
       </main>
-      <footer />
     </div>
+    </TranslationsProvider> 
   );
 }
