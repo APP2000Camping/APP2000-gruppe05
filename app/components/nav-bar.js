@@ -9,8 +9,8 @@ export default function NavBar() {
   return (
     <nav className={styles.navBar}>
         <div className={styles.logo}>
-        <Link legacyBehavior href="/" passHref>
-                <a target="_blank" rel="noopener noreferrer">
+        <Link legacyBehavior href="/" passHref >
+                <a target="_blank" rel="noopener noreferrer" >
                   <img src='images\Camping1.png' aria-hidden="true" className={styles.logoImg}></img>
                 </a>
                 </Link>
@@ -45,12 +45,17 @@ export default function NavBar() {
           </li>
           <li className={styles.navItem}>
           <Link href="/booking" passHref>
-            {t('common:navbar_booking')}
+            {t('navbar_booking')}
           </Link>
           </li>
         </ul>
         </div>
       </div>
+      <div className={styles.navMySite}>
+          <Link href="/mySite" passHref>
+            {t('navbar_mysite')}
+          </Link>
+        </div>
     </nav>
   );
 };

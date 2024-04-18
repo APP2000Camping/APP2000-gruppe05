@@ -23,4 +23,3 @@ const ArticleEditor = ({ initialContent, handleEditorChange }) => {
 
 export default ArticleEditor;
 
-

@@ -1,24 +1,27 @@
 /* components/nav-bar.module.css */
 .navBar {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
   align-items: center;
   color: #000000;
   font-family: "Mukta";
   padding: 10px 0;
-  background-color: #f7f9fb;
-
+  background-color: #e4e4e4;
 }
 
 .logo {
   color: #000000;
-  padding: 10px;
   margin: auto;
   border-radius: 5px;
+  max-width: 200px;
+  padding-left: 10px;
+  
 }
+
 .logoImg {
-  width: 200px;
+  width: 100%;
 }
+
 .profileIcon {
   width: 35px;
 }
@@ -49,9 +52,9 @@
 
 .container {
   width: 100%;
-  max-width: 80%;
   line-height: 1.5;
-  background-color: #f7f9fb;
+  background-color: #e4e4e4;
+  
 }
  
 .column {
@@ -64,6 +67,13 @@
 
 .logoImg {
   border-radius: 5px;
+}
+
+.navMySite {
+  display: flex;
+  width: 200px;
+  justify-content: right;
+  
 }
 
 
