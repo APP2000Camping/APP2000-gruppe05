@@ -1,22 +1,29 @@
 // Skrevet av Rolf
-import { getClient } from "@/app/[locale]/db";
+import { getClient } from "@/app/utils/db";
+import bcrypt from "bcryptjs";
 
 const database = await getClient();
 const users = database.collection("users");
 
 export async function POST(req) {
   try {
-    const doc = await req.json();
+    
+    const { email, password } = await req.json();
 
-    // Stopper prossessen når duplicateCheck() er true
-    if (await duplicateCheck(doc)) {
-      return new Response( JSON.stringify({ response: "User already exists" }), {
-        status: 403,
-      })
+    const existingUser = await users.findOne({ email })
+
+    if(existingUser) {
+        return new Response( JSON.stringify({ response: "Email er allerede i bruk"}), {
+            status: 400,
+        })
     }
 
+    const hashedPassword = await bcrypt.hash(password, 5);
+
+    const doc = { email, hashedPassword }
+
     const result = await users.insertOne(doc);
-    
+
   } finally {
 
     return new Response( JSON.stringify({ response: "Inserted document" }), {
@@ -25,10 +32,9 @@ export async function POST(req) {
   }
 }
 
-// Checks if the userID input to the form already exists, if true it exists
 async function duplicateCheck(doc) {
 
-  const query = { userID: doc.userID };
+  const query = { email: doc.email };
 
   const user = await users.findOne(query);
 

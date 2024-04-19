@@ -1,6 +1,5 @@
 "use client";
 
-
 import TranslationsProvider from '../components/TranslationsProvider';
 import News from '../components/news';
 import ButtonOnPicture from "../components/buttonOnPicture";
