@@ -1,26 +1,19 @@
-// components/GridComponent.js
+// components/Grid.js
 import React from 'react';
 import styles from './grid.module.css';
-import { useTranslation } from 'react-i18next';
+import Article from './article';
 
-export default function Grid() {
-  const { t } = useTranslation();
+export default function Grid({ articles, onEdit }) {
   return (
     <div className={styles.gridContainer}>
-      <div className={styles.gridItem}>
-        <h2>{t('gridI1_title')}</h2>
-        <p>{t('gridI1_content')}</p>
-      </div>
-      <div className={styles.gridItem}>
-        <h2>{t('gridI2_title')}</h2>
-        <p>{t('gridI2_content')}</p>
-      </div>
-      <div className={styles.gridItem}>
-        <h2>{t('gridI3_title')}</h2>
-        <p>{t('gridI3_content')}</p>
-      </div>
+      {articles.map((article, index) => (
+        <div key={article.id} className={styles.gridItem}>
+          <Article
+            content={article}
+            onEdit={() => onEdit(index)}
+          />
+        </div>
+      ))}
     </div>
   );
-};
-
-
+}

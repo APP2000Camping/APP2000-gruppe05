@@ -1,0 +1,54 @@
+/* faq/faq.css */
+.flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .flex-col {
+    flex-direction: column;
+  }
+  
+  .min-h-screen {
+    min-height: 100vh;
+  }
+  
+
+  
+ 
+.accordionContainer {
+  width: 50%;
+  margin: 0 auto; 
+  display: block; 
+}
+
+  
+ 
+  .accordion-item h2 {
+    padding: 10px 20px;
+    background-color: #e7e7e7; 
+    margin: 0;
+  }
+  
+  
+  .article-content {
+    padding: 15px;
+    border-top: 1px solid #ddd; 
+  }
+  
+  
+  .cancel-button {
+    background-color: #ff6347; 
+    color: white;
+  }
+  
+  .del-button {
+    background-color: #dc143c; 
+    color: white;
+  }
+  
+
+  
+  
+ 
+  

@@ -11,14 +11,12 @@ export async function POST(req) {
   try {
     const doc = await req.json();
 
-  
-
     const result = await users.insertOne(doc);
     
   } finally {
 
     return new Response( JSON.stringify({ response: "Inserted document" }), {
-        status: 201,
+        status: 200,
       })
   }
 }

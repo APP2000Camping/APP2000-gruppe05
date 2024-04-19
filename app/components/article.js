@@ -1,18 +1,22 @@
-/* Skrevet av Jesper */
-'use client'
 import React from 'react';
-import styles from "./article.module.css";
-import { useTranslation } from 'react-i18next';
+import DOMPurify from 'dompurify';
+import styles from './article.module.css';
+import { Button } from '@nextui-org/react'; 
 
-export default function article() {
-  const {t} = useTranslation();
-    return (
+export default function Article({ content, onEdit }) {
+  return (
     <div className={styles.articleContainer}>
-        <artikkel>
-            <h1 className={styles.articleTitle}>{t('ArticleHeader')}</h1>
-            <p className={styles.articleContent}>{t('ArticleContent')}</p>
-        </artikkel>
+      <article>
+        <h1 className={styles.articleTitle}>{content.title}</h1>
+        <div 
+          className={styles.articleContent} 
+          dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(content.content) }} 
+        />
+        
+        <Button onClick={onEdit} auto ghost>
+          Rediger
+        </Button>
+      </article>
     </div>
-    );
-};
-
+  );
+}
