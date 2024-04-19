@@ -2,10 +2,9 @@
 import './globals.css';
 import NavBar from '../components/nav-bar';
 import Footer from '../components/footer';
-import {Providers} from "./providers";
+import {Providers} from "./nextUIprovider";
 import initTranslations from '../i18n';
 import TranslationsProvider from '../components/TranslationsProvider';
-
 
 const i18nNamespaces = ['Common', 'Home'];
 

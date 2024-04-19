@@ -1,5 +1,5 @@
 //app/api/putArticle/route.js
-import { getClient } from "@/app/db";
+import { getClient } from "@/app/utils/db";
 import { ObjectId } from "mongodb";
 
 const database = await getClient();

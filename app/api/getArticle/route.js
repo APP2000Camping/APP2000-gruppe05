@@ -1,6 +1,6 @@
 // app/api/getArticle.js
 
-import { getClient } from "@/app/db"; 
+import { getClient } from "@/app/utils/db"; 
 const database = await getClient();
 const articles = database.collection('Artikler');
 
