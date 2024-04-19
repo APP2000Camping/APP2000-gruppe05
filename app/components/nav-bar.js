@@ -51,11 +51,20 @@ export default function NavBar() {
         </ul>
         </div>
       </div>
-      <div className={styles.navMySite}>
-          <Link href="/mySite" passHref>
-            {t('navbar_mysite')}
-          </Link>
-        </div>
+      <div>
+        <ul className={styles.navList}>
+          <li className={styles.navItem}>
+            <Link href="/login">
+              Login
+            </Link>
+          </li>
+          <li className={styles.navItem}>
+            <Link href="/register">
+              Register
+            </Link>
+          </li>
+        </ul>
+      </div>
     </nav>
   );
 };

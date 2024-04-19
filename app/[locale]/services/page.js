@@ -90,7 +90,7 @@ export default function Services ({ params:{locale}}) {
 const handleSubmit = async (index) => {
   if (index < 0 || index >= articles.length) {
     console.error("Invalid index: Index is out of bounds.");
-    return; // Exit the function if the index is invalid
+    return; 
   }
 
   const article = articles[index];

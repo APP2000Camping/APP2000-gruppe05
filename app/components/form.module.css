@@ -1,0 +1,61 @@
+.formContainer {
+    display: flex;
+    margin-left: 35%;
+    margin-right: 35%;
+    justify-content: center;
+    align-items: center;
+    height: 50vh; /* Fyller hele høyden av viewporten */
+    color: black;
+  }
+  
+  .userlist {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50vh;
+    color: black;
+  }
+  
+  .ul {
+    color: black;
+  }
+  
+  .li {
+    color: black;
+  }
+  
+  .error {
+    color: red;
+  }
+  
+  .form {
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  }
+    
+  .inputField {
+    width: 100%;
+    padding: 8px 12px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+  }
+  
+  .submitButton {
+    width: 100%;
+    padding: 8px 12px;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+  }
+    
+  .submitButton:hover {
+    background-color: #0056b3;
+  }
+  
+  .h2 {
+    color: black;
+  }
+    
