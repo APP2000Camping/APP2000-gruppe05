@@ -1,4 +1,3 @@
-
 import './globals.css';
 import NavBar from '../components/nav-bar';
 import Footer from '../components/footer';
@@ -19,7 +18,6 @@ export default async function RootLayout({ children, params: { locale } }) {
  
   const { resources, t } = await initTranslations(locale, i18nNamespaces);
 
-  const session = await getServerSession();
   return (
     <html lang={locale}>
       <body>

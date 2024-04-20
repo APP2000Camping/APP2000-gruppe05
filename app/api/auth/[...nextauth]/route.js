@@ -38,23 +38,15 @@ export const authOptions = {
         }
     }),
   ],
-  session: {
-    jwt: true,
-  },
   callbacks: {
-    async jwt(token, user) {
-        if (user) {
-            token.id = user.id;
-            token.role = user.role;
-        }
-        return token;
-    },
-    async session(session, token) {
-        session.user.id = token.id;
-        session.user.role = token.role;
-        return session;
-    }
-  },
+    async jwt(token, user, account, profile, isNewUser) {
+     if (user) { // User object only passed on initial JWT creation
+       const administrators = [ 'jsmith@example.com' ]
+       token.isAdmin = administrators.includes(user?.email)
+     }
+     return token
+   }
+ }
 }
 
 export const handler = NextAuth(authOptions);

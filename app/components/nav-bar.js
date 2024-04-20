@@ -11,11 +11,11 @@ export default function NavBar() {
   return (
     <nav className={styles.navBar}>
         <div className={styles.logo}>
-        <Link legacyBehavior href="/" passHref >
-                <a target="_blank" rel="noopener noreferrer" >
-                  <img src='images\Camping1.png' aria-hidden="true" className={styles.logoImg}></img>
-                </a>
-                </Link>
+          <Link legacyBehavior href="/" passHref >
+            <a target="_blank" rel="noopener noreferrer" >
+              <img src='images\Camping1.png' aria-hidden="true" className={styles.logoImg}></img>
+            </a>
+          </Link>
         </div>
           <div className={styles.container}>
               <div className={styles.column}>
@@ -73,7 +73,11 @@ export default function NavBar() {
           <>
           {session.user?.email}
           <li>
-            <button className={styles.resKnapp}>Logout</button>
+            <button onClick={() => {
+              signOut();
+            }} className={styles.resKnapp}>
+              Logout
+            </button>
           </li>
           </>
         )}
