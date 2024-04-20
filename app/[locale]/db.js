@@ -8,7 +8,7 @@ let database;
 export async function getClient() {
     if (!database) {
         const client = new MongoClient(process.env.MONGODB_URI);
-        database = client.db("Camping");
+        database = client.db("userLogin");
         return database;
     } else {
         return database;

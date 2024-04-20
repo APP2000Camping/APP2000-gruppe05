@@ -1,8 +1,5 @@
 // Skrevet av Rolf
-import { getClient } from "@/app/db";
-
-
-
+import { getClient } from "@/app/utils/db";
 
 const database = await getClient();
 const users = database.collection("Artikler");
