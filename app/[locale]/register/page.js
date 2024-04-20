@@ -2,7 +2,7 @@
 //Skrevet av Rolf
 
 import '../globals.css';
-import styles from '../components/login.module.css';
+import styles from '../../components/form.module.css';
 import Link from "next/link";
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
@@ -40,6 +40,7 @@ export default function Home() {
         body: JSON.stringify({ // Konverterer javascript verdi til JSON objekt
           "email": email,
           "password": password,
+          "role": "user"
         }),
       });
 

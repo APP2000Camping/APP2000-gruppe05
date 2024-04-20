@@ -5,6 +5,8 @@ import Footer from '../components/footer';
 import {Providers} from "./nextUIprovider";
 import initTranslations from '../i18n';
 import TranslationsProvider from '../components/TranslationsProvider';
+import { getServerSession } from 'next-auth';
+import SessionProvider from '../utils/SessionProvider'
 
 const i18nNamespaces = ['Common', 'Home'];
 
@@ -17,16 +19,17 @@ export default async function RootLayout({ children, params: { locale } }) {
  
   const { resources, t } = await initTranslations(locale, i18nNamespaces);
 
+  const session = await getServerSession();
   return (
     <html lang={locale}>
       <body>
-        <Providers>
+        <SessionProvider>
           <TranslationsProvider resources={resources} locale={locale} namespaces={i18nNamespaces}>
             <NavBar />
             <main>{children}</main>
             <Footer />
           </TranslationsProvider>
-        </Providers>
+        </SessionProvider>
       </body>
     </html>
   );

@@ -31,18 +31,3 @@ export async function POST(req) {
       })
   }
 }
-
-async function duplicateCheck(doc) {
-
-  const query = { email: doc.email };
-
-  const user = await users.findOne(query);
-
-  console.log(user);
-
-  if (user) {
-    return true;
-  } else {
-    return false;
-  }
-}

@@ -1,4 +1,4 @@
-"use client";
+"use client"
 // app/faq/page.js
 //laget av sondre
 
@@ -6,9 +6,6 @@ import '../globals.css';
 import Article from '../../components/article';
 import TranslationsProvider from '../../components/TranslationsProvider';
 import initTranslations from '../../i18n';
-
-
-
  
 
 const i18nNamespaces = ['Contact', 'Common'];

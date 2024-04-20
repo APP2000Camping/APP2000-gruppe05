@@ -3,8 +3,10 @@
 import Link from 'next/link';
 import styles from './nav-bar.module.css';
 import { useTranslation } from 'react-i18next';
+import { signOut, useSession } from 'next-auth/react';
 
 export default function NavBar() {
+  const { data: session } = useSession();
   const {t} = useTranslation();
   return (
     <nav className={styles.navBar}>
@@ -52,18 +54,29 @@ export default function NavBar() {
         </div>
       </div>
       <div>
-        <ul className={styles.navList}>
-          <li className={styles.navItem}>
-            <Link href="/login">
-              Login
-            </Link>
+        {!session ? (
+          <>
+          <ul className={styles.navList}>
+            <li className={styles.navItem}>
+              <Link href="/login">
+                Login
+              </Link>
+            </li>
+            <li className={styles.navItem}>
+              <Link href="/register">
+                Register
+              </Link>
+            </li>
+          </ul>
+          </>
+        ): (
+          <>
+          {session.user?.email}
+          <li>
+            <button className={styles.resKnapp}>Logout</button>
           </li>
-          <li className={styles.navItem}>
-            <Link href="/register">
-              Register
-            </Link>
-          </li>
-        </ul>
+          </>
+        )}
       </div>
     </nav>
   );

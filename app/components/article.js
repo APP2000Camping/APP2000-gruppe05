@@ -1,7 +1,7 @@
 import React from 'react';
 import DOMPurify from 'dompurify';
 import styles from './article.module.css';
-import { Button } from '@nextui-org/react'; 
+import { Button } from '@nextui-org/react';
 
 export default function Article({ content, onEdit }) {
   return (
