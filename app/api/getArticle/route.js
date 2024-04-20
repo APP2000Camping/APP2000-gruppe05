@@ -1,18 +1,19 @@
 // app/api/getArticle.js
-
 import { getClient } from "@/app/db"; 
-const database = await getClient();
-const articles = database.collection('Artikler');
+
+async function getArticlesBySection(section) {
+  const database = await getClient();
+  const articles = database.collection('Artikler');
+  const query = section ? { section: section } : {}; 
+  return await articles.find(query).toArray();
+}
 
 export async function GET(req) {
   try {
+    const { searchParams } = new URL(req.url);
+    const section = searchParams.get('section'); 
     
-    if (!database) {
-      throw new Error('Databaseforbindelsen mislyktes');
-    }
-    
-
-    const allArticles = await articles.find().toArray(); 
+    const allArticles = await getArticlesBySection(section);
 
     if (!allArticles.length) {
       return new Response(JSON.stringify({ error: 'Ingen artikler funnet' }), {
