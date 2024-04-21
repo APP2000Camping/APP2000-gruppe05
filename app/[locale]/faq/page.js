@@ -29,7 +29,7 @@ export default function FAQ({ params: { locale } }) {
     const fetchArticles = async () => {
       console.log("Henter artikler fra serveren...");
       try {
-          const response = await fetch('/api/getArticle');
+        const response = await fetch('/api/getArticle?section=FAQ');
           if (response.ok) {
               const data = await response.json();
               const formattedArticles = data.map(article => ({
@@ -64,7 +64,7 @@ export default function FAQ({ params: { locale } }) {
   };
 
   const startEditing = (index) => {
-    console.log("Editing article at index:", index);
+    console.log("oppdaterer artikkel med index:", index);
     setEditingIndex(index);
 };
 
@@ -75,20 +75,23 @@ const handleSubmit = async (index) => {
     return; 
   }
 
-  const article = articles[index];
+  const article = { ...articles[index], section: 'FAQ' };
   const isNewArticle = !article.id;  
   const method = isNewArticle ? 'POST' : 'PUT';
   const apiEndpoint = isNewArticle ? '/api/sendArticle' : `/api/putArticle?id=${encodeURIComponent(article.id)}`;
 
   try {
     console.log("Sending request to:", apiEndpoint);
+    
     const response = await fetch(apiEndpoint, {
       method,
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
         id: article.id,
         title: article.title,
-        content: article.content
+        content: article.content,
+        section:'FAQ'
+        
       }),
     });
 
@@ -124,7 +127,7 @@ const handleDeleteArticle = async (index) => {
   }
 
   try {
-      const response = await fetch(`/api/delArticle?id=${article.id}`, {
+    const response = await fetch(`/api/delArticle?id=${article.id}&section=FAQ`, {
           method: 'DELETE',
       });
 
@@ -141,7 +144,7 @@ const handleDeleteArticle = async (index) => {
 };
 
   const handleAddArticle = () => {
-  const newArticle = { title: 'Skriv inn Spørsmålet med en av heading alternativene. Bruk paragraf som spørsmål', content: '' };
+  const newArticle = { title: 'Skriv inn Spørsmålet med en av heading alternativene. Bruk paragraf som spørsmål', content: '',section:'FAQ' };
   setArticles([...articles, newArticle]);
   setEditingIndex(articles.length); 
 };

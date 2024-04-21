@@ -1,5 +1,5 @@
+"use client"
 // app/providers.js
-'use client'
 
 import { NextUIProvider } from '@nextui-org/react';
 

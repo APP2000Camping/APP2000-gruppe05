@@ -1,3 +1,4 @@
+// Skrevet av Rolf
 import NextAuth from "next-auth"
 //import GithubProvider from "next-auth/providers/github"
 import CredentialsProvider from "next-auth/providers/credentials"
@@ -36,14 +37,16 @@ export const authOptions = {
             }
         }
     }),
-    /*
-    GithubProvider({
-      clientId: process.env.GITHUB_ID ?? "",
-      clientSecret: process.env.GITHUB_SECRET ?? "",
-    }),
-    */
-    // ...add more providers here
   ],
+  callbacks: {
+    async jwt(token, user, account, profile, isNewUser) {
+     if (user) { // User object only passed on initial JWT creation
+       const administrators = [ 'jsmith@example.com' ]
+       token.isAdmin = administrators.includes(user?.email)
+     }
+     return token
+   }
+ }
 }
 
 export const handler = NextAuth(authOptions);
