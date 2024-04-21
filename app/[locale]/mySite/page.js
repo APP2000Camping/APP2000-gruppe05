@@ -1,6 +1,6 @@
 "use client";
 // app/faq/page.js
-//laget av sondre
+
 
 import '../globals.css';
 

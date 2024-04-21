@@ -11,7 +11,7 @@ export default function BookingForm() {
   return (
     
     <div>
-      <h1>{t('booking_title')}</h1>
+      <h1 className={styles.title}>{t('booking_title')}</h1>
       <div className={styles.bookingForm}>
       <div className={styles.formWrapper}>
       <form>
@@ -39,7 +39,7 @@ export default function BookingForm() {
           <label htmlFor="date">{t('booking_date')}</label>
           <input type="date" id="date" name="date" required />
         </div>
-        <button className={styles.formButton} type="submit">{t('booking_button')}</button>
+        <button className={styles.formButton} type="submit">{t('contact_submit')}</button>
       </form>
       </div>
       </div>
