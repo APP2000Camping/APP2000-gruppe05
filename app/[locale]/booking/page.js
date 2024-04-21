@@ -21,7 +21,7 @@ export default async function BookingPage ({ params:{locale}}) {
       locale={locale} 
       namespaces={i18nNamespaces}>
     <div className="flex flex-col min-h-screen">
-      <main className="flex-grow">
+      <main>
       <BookingForm />
       </main>
       <footer />

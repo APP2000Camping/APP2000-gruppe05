@@ -17,7 +17,7 @@ export default async function Home ({ params:{locale}}) {
       locale={locale} 
       namespaces={i18nNamespaces}>
     <div className="flex flex-col min-h-screen">
-      <main className="flex-grow">
+      <main>
         
       <Article />
       </main>

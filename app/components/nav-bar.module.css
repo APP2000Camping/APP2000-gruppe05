@@ -6,7 +6,7 @@
   color: #000000;
   font-family: "Mukta";
   padding: 10px 0;
-  background-color: #e4e4e4;
+  background-color: #ffffff;
 }
 
 .logo {
@@ -39,11 +39,13 @@
 .navList {
   list-style: none;
   display: flex;
+  flex-direction: row;
+  width: fit-content;
 }
 
 .navItem {
   padding: 0 1rem;
-  font-family:Georgia, 'Times New Roman', Times, serif
+  font-family:Georgia, 'Times New Roman', Times, serif;
 }
 
 .navItem a:hover {
@@ -53,7 +55,7 @@
 .container {
   width: 100%;
   line-height: 1.5;
-  background-color: #e4e4e4;
+  background-color: #ffffff;
   
 }
  
@@ -69,12 +71,6 @@
   border-radius: 5px;
 }
 
-.navMySite {
-  display: flex;
-  width: 200px;
-  justify-content: right;
-  
-}
 
 
 

@@ -36,8 +36,17 @@ export default function Footer() {
             </ul>
           </div>
           <div className={styles['footer-col']}>
+            <div className={styles.madeBy}>
             <h4>{t('footer_madeby')}</h4>
+            <div className={styles.LanguageSwitcher}><LanguageSwitcher /></div>
+            <div className={styles.flags}>
+              <img src='images/Norway.png' alt="Norsk" className={styles.flag1} />
+              <img src='images/English.png' alt="English" className={styles.flag2} />
+              <img src='images/German.png' alt="German" className={styles.flag3} />
+            </div>
           </div>
+        </div>
+          
           <div className={styles['footer-col']}>
             <h4>{t('footer_title2')}</h4>
             <div className={styles['social-links']}>
@@ -58,7 +67,7 @@ export default function Footer() {
               </Link>
               
             </div>
-            <LanguageSwitcher />
+            
           </div>
           
         </div>
