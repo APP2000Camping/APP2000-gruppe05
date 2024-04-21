@@ -40,7 +40,6 @@ export default function Home() {
         body: JSON.stringify({ // Konverterer javascript verdi til JSON objekt
           "email": email,
           "password": password,
-          "role": "user"
         }),
       });
 

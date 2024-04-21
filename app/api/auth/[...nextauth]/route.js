@@ -39,9 +39,9 @@ export const authOptions = {
     }),
   ],
   callbacks: {
-    async jwt(token, user, account, profile, isNewUser) {
-     if (user) { // User object only passed on initial JWT creation
-       const administrators = [ 'jsmith@example.com' ]
+    async jwt(token, user) {
+     if (user) { 
+       const administrators = [ "testmail.admin@gmail.com" ]
        token.isAdmin = administrators.includes(user?.email)
      }
      return token
