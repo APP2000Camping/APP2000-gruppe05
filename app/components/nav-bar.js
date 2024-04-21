@@ -55,12 +55,12 @@ export default function NavBar() {
         <ul className={styles.navList}>
           <li className={styles.navItem}>
             <Link href="/login">
-              Login
+            {t('navbar_login')}
             </Link>
           </li>
           <li className={styles.navItem}>
             <Link href="/register">
-              Register
+            {t('navbar_register')}
             </Link>
           </li>
         </ul>

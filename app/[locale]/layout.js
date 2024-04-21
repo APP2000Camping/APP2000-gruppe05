@@ -15,6 +15,7 @@ export const metadata = {
 
 export default async function RootLayout({ children, params: { locale } }) {
  
+  try {
   const { resources, t } = await initTranslations(locale, i18nNamespaces);
 
   return (
@@ -30,6 +31,11 @@ export default async function RootLayout({ children, params: { locale } }) {
       </body>
     </html>
   );
+} catch (error) {
+  console.error('Error initializing translations:', error);
+  
+  return <div>Error initializing translations. Please try again later.</div>;
+}
 }
   
   
