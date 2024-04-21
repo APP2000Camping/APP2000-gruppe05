@@ -18,6 +18,7 @@ const { t, resources } = await initTranslations(locale, i18nNamespaces);
       namespaces={i18nNamespaces}>
         <main className="flex-grow">
           <ButtonOnPicture />
+           
           <News />
         </main>
       </TranslationsProvider>
