@@ -152,7 +152,7 @@ const handleDeleteArticle = async (index) => {
   return (
     <TranslationsProvider resources={resources} locale={locale} namespaces={i18nNamespaces}>
       <div className="flex flex-col min-h-screen">
-        <main className="flex-grow">
+        <main>
           <Button onClick={handleAddArticle}>Legg til Artikkel</Button>
           <Accordion className={styles.accordionContainer} selectionMode="multiple">
             {articles.map((article, index) => (

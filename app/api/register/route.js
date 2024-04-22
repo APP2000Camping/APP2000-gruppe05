@@ -20,7 +20,10 @@ export async function POST(req) {
 
     const hashedPassword = await bcrypt.hash(password, 5);
 
-    const doc = { email, hashedPassword }
+    const doc = {
+      email,
+      hashedPassword
+    }
 
     const result = await users.insertOne(doc);
 
@@ -29,20 +32,5 @@ export async function POST(req) {
     return new Response( JSON.stringify({ response: "Inserted document" }), {
         status: 201,
       })
-  }
-}
-
-async function duplicateCheck(doc) {
-
-  const query = { email: doc.email };
-
-  const user = await users.findOne(query);
-
-  console.log(user);
-
-  if (user) {
-    return true;
-  } else {
-    return false;
   }
 }

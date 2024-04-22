@@ -6,7 +6,7 @@ import { useTranslation } from 'react-i18next';
 import i18nConfig from '../../i18Config';
 import styles from './LanguageSwitcher.module.css';
 import React from "react";
-import {Tabs, Tab} from "@nextui-org/react";
+
 
 export default function LanguageSwitcher() {
   const { i18n } = useTranslation();

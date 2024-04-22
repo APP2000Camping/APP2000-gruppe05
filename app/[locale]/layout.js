@@ -1,10 +1,11 @@
-
 import './globals.css';
 import NavBar from '../components/nav-bar';
 import Footer from '../components/footer';
 import {Providers} from "./nextUIprovider";
 import initTranslations from '../i18n';
 import TranslationsProvider from '../components/TranslationsProvider';
+import { getServerSession } from 'next-auth';
+import SessionProvider from '../utils/SessionProvider'
 
 const i18nNamespaces = ['Common', 'Home'];
 
@@ -15,21 +16,27 @@ export const metadata = {
 
 export default async function RootLayout({ children, params: { locale } }) {
  
+  try {
   const { resources, t } = await initTranslations(locale, i18nNamespaces);
 
   return (
     <html lang={locale}>
       <body>
-        <Providers>
+        <SessionProvider>
           <TranslationsProvider resources={resources} locale={locale} namespaces={i18nNamespaces}>
             <NavBar />
             <main>{children}</main>
             <Footer />
           </TranslationsProvider>
-        </Providers>
+        </SessionProvider>
       </body>
     </html>
   );
+} catch (error) {
+  console.error('Error initializing translations:', error);
+  
+  return <div>Error initializing translations. Please try again later.</div>;
+}
 }
   
   

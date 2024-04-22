@@ -23,7 +23,7 @@ export default function BookingForm({ handleBooking }) {
 
   return (
     <div>
-      <h1>{t('booking_title')}</h1>
+      <h1 className={styles.title}>{t('booking_title')}</h1>
       <div className={styles.bookingForm}>
         <div className={styles.formWrapper}>
           <form onSubmit={handleSubmit}>

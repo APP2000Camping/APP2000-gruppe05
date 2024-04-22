@@ -25,6 +25,7 @@
     "framer-motion": "^11.0.25",
     "i18next": "^23.11.2",
     "i18next-resources-to-backend": "^1.2.1",
+    "image-data-uri": "^2.0.1",
     "mongodb": "^6.3.0",
     "next": "^14.1.0",
     "next-auth": "^4.24.7",

@@ -2,7 +2,7 @@
 //Skrevet av Rolf
 
 import '../globals.css';
-import styles from '../components/login.module.css';
+import styles from '../../components/form.module.css';
 import Link from "next/link";
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
@@ -60,7 +60,7 @@ export default function Home() {
     return (
         <div className="flex flex-col min-h-screen">
             <div className={styles.formContainer}>
-                <main className="flex-grow">
+                <main>
                     <h1 className="text-4xl text-center font-semibold mb-8">Login</h1>
                     <form onSubmit = {handleSubmit} className={styles.form}>
 
