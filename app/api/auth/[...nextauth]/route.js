@@ -17,6 +17,7 @@ export const authOptions = {
         credentials: {
             email: {label: "Email", type: "text"},
             password: {label: "Password", type: "password"},
+            role: {label: "role", type: "text"},
         },
         async authorize(credentials) {
             try {
@@ -38,6 +39,7 @@ export const authOptions = {
         }
     }),
   ],
+  /*
   callbacks: {
     async jwt(token, user) {
      if (user) { 
@@ -47,6 +49,7 @@ export const authOptions = {
      return token
    }
  }
+ */
 }
 
 export const handler = NextAuth(authOptions);
