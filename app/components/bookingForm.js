@@ -39,7 +39,7 @@ export default function BookingForm() {
           <label htmlFor="date">{t('booking_date')}</label>
           <input type="date" id="date" name="date" required />
         </div>
-        <button className={styles.formButton} type="submit">{t('contact_submit')}</button>
+        <button className={styles.formButton} type="submit">{t('booking_button')}</button>
       </form>
       </div>
       </div>
