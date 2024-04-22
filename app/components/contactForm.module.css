@@ -1,20 +1,23 @@
-.bookingForm {
+.contactForm {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 3px;
+    padding: 10px;
     
 }
 
 .formWrapper {
     display: flex;
     justify-content: center;
-    width: 300px; 
+    width: 100%; 
     padding: 20px;
     border: 1px solid #ccc;
     border-radius: 5px;
     background-color: #fff;
+    flex-direction: row;
+    flex-wrap: wrap;
+   
   }
 
   .formButton{
@@ -31,7 +34,7 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
 }
 
-.bookingItem {
+.contactItem {
     padding: 2px;
 }
 
