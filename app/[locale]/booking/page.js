@@ -95,12 +95,11 @@ export default function BookingPage({ params: { locale } }) {
       resources={translations.resources} 
       locale={locale} 
       namespaces={i18nNamespaces}>
-      <div className="flex flex-col min-h-screen">
-        <main className="flex-grow">
-          <BookingForm handleBooking={handleBooking} availableSites={availableSites} />
-        </main>
-        <footer />
-      </div>
-    </TranslationsProvider>
-  );
+    <div className="flex flex-col min-h-screen">
+      <main className="flex-grow">
+      <BookingForm />
+      </main>
+      <footer />
+    </div>
+    </TranslationsProvider> )
 };

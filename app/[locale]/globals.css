@@ -54,7 +54,7 @@ a {
 
 
 @media screen and (max-width: 767px) {
-
+  /* Adjust styles for screens up to 767px wide (e.g., smartphones) */
   main {
     padding: 0 10px; 
   }
@@ -63,7 +63,7 @@ a {
 
 
 @media screen and (min-width: 768px) and (max-width: 1023px) {
-  
+  /* Adjust styles for screens between 768px and 1023px wide (e.g., tablets) */
   main {
     max-width: 90%; 
     margin: 0 auto; 
@@ -72,10 +72,10 @@ a {
 
 
 @media screen and (min-width: 1024px) {
-  
+  /* Adjust styles for screens wider than 1023px (e.g., desktops) */
   main {
  
-    margin: 0 
+    margin: 0 /* Center the content horizontally */
   }
   
 }

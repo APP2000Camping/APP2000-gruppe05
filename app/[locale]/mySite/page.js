@@ -1,17 +1,25 @@
-"use client";
-// app/faq/page.js
+// Skrevet av Jesper
 
+import '../globals.css'; 
+import TranslationsProvider from '../../components/TranslationsProvider';
+import initTranslations from '../../i18n';
+import User from '../../components/mySiteUser';
 
-import '../globals.css';
+const i18nNamespaces = ['My Page', 'Common'];
 
-export default function Contact() {
+export default async function myPage ({ params:{locale}}) {
+  const { t, resources } = await initTranslations(locale, i18nNamespaces);
   return (
+
+    <TranslationsProvider 
+      resources={resources} 
+      locale={locale} 
+      namespaces={i18nNamespaces}>
     <div className="flex flex-col min-h-screen">
       <main>
-        <h1>Min side</h1>
-        <p>her er din side</p>
+      <User />
       </main>
-      <footer />
     </div>
+    </TranslationsProvider>
   );
 }
