@@ -11,6 +11,8 @@ const i18nNamespaces = ['Booking', 'Common'];
 export default function BookingPage({ params: { locale } }) {
   const [booking, setBooking] = useState([]);
   const [translations, setTranslations] = useState({ t: () => '', resources: {} });
+  const [availableSites, setAvailableSites] = useState([]);
+
 
   useEffect(() => {
     async function loadTranslations() {
@@ -21,23 +23,30 @@ export default function BookingPage({ params: { locale } }) {
   }, [locale]);
 
   useEffect(() => {
-    async function fetchBooking() {
+    async function fetchBookingAndAvailableSites() {
       console.log("Henter booking fra serveren...");
       try {
         const response = await fetch('/api/getBooking');
         if (response.ok) {
-          const data = await response.json();
-          const formattedBooking = data.map(bookingData => ({
-            id: bookingData.id,
-            plassNr: bookingData.plassNr,
-            type: bookingData.type,
-            navn: bookingData.navn,
-            email: bookingData.email,
-            tlfnr: bookingData.tlfnr,
-            dato: bookingData.dato
+          const bookingData = await response.json();
+          const formattedBooking = bookingData.map(booking => ({
+            id: booking.id,
+            plassNr: booking.plassNr,
+            type: booking.type,
+            navn: booking.navn,
+            email: booking.email,
+            tlfnr: booking.tlfnr,
+            dato: booking.dato
           }));
           console.log("booking med ID:", formattedBooking);
+  
+          
+          const allSites = Array.from({ length: 20 }, (v, i) => `A${i + 1}`);
+          const occupiedSites = new Set(formattedBooking.map(b => b.plassNr));
+          const availableSitesData = allSites.filter(site => !occupiedSites.has(site));
+  
           setBooking(formattedBooking);
+          setAvailableSites(availableSitesData);
         } else {
           console.error('Feil ved henting av booking');
         }
@@ -45,8 +54,9 @@ export default function BookingPage({ params: { locale } }) {
         console.error('Nettverksfeil ved henting av booking:', error);
       }
     }
-    fetchBooking();
-  }, []);
+    fetchBookingAndAvailableSites();
+  }, []); 
+  
   const handleBooking = async (bookingData) => {
     const apiEndpoint = '/api/sendBooking';
   

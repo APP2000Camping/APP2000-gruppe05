@@ -5,7 +5,7 @@
   --background-end-rgb: 255, 255, 255;
 }
 
-/* Dark mode */
+
 @media (prefers-color-scheme: dark) {
   :root {
     --foreground-rgb: 255, 255, 255;
@@ -14,7 +14,7 @@
   }
 }
 
-/* General styles */
+
 body {
   display: flex;
   margin: 0;
@@ -52,25 +52,25 @@ a {
  
 
 
-/* Styles for Mobile Devices */
+
 @media screen and (max-width: 767px) {
   /* Adjust styles for screens up to 767px wide (e.g., smartphones) */
   main {
-    padding: 0 10px; /* Adjust padding for smaller screens */
+    padding: 0 10px; 
   }
 
 }
 
-/* Styles for Tablet Devices */
+
 @media screen and (min-width: 768px) and (max-width: 1023px) {
   /* Adjust styles for screens between 768px and 1023px wide (e.g., tablets) */
   main {
-    max-width: 90%; /* Adjust max-width for tablet screens */
-    margin: 0 auto; /* Center the content horizontally */
+    max-width: 90%; 
+    margin: 0 auto; 
   }
 }
 
-/* Styles for Desktop Devices */
+
 @media screen and (min-width: 1024px) {
   /* Adjust styles for screens wider than 1023px (e.g., desktops) */
   main {
