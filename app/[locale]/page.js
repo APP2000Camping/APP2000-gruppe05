@@ -34,8 +34,8 @@ export default function Home({ params:{locale}}) {
           <div className="section-row">
             <div>
               <h2>Endre bilde:</h2>
-              <input type='file' onChange={handleFileChange}/>
-              <button onClick={handleSubmit}>Bytt bilde</button>
+              <input type='file'/>
+              <button>Bytt bilde</button>
             </div>
           </div>
         </section>
