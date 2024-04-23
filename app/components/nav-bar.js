@@ -74,7 +74,7 @@ export default function NavBar() {
               <ul className={styles.navList}>
                 <li className={styles.navItem}>
                   <Link href="/mySite">
-                    {session.user?.name}
+                  {session.user?.name}
                   </Link>
                 </li>
                 <li className={styles.navItem}>

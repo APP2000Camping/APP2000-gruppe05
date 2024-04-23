@@ -5,18 +5,26 @@ import News from '../components/news';
 import ButtonOnPicture from "../components/buttonOnPicture";
 import initTranslations from '../i18n';
 import { useSession } from 'next-auth/react';
+import React, { useState, useEffect } from 'react';
 
 const i18nNamespaces = ['Home', 'Common'];
 
 export default function Home({ params:{locale}}) {
-  
-  const { t, resources } = initTranslations(locale, i18nNamespaces);
-
+  const [t, setT] = useState(() => (key) => key);
+  const [resources, setResources] = useState({});
   const { data: session } = useSession();
 
 
+  useEffect(() => {
+    async function loadTranslations() {
+      const translationResult = await initTranslations(locale, i18nNamespaces);
+      setT(() => translationResult.t);
+      setResources(translationResult.resources);
+    }
+    loadTranslations();
+  }, [locale]);
+
   return (
-   
     <TranslationsProvider resources={resources} locale={locale} namespaces={i18nNamespaces}>
     <main>
      
@@ -28,7 +36,7 @@ export default function Home({ params:{locale}}) {
         </div>
       </section>
 
-      {session ? (
+      {session && session.user.role === "admin" && (
         <>
         <section>
           <div className="section-row">
@@ -40,8 +48,6 @@ export default function Home({ params:{locale}}) {
           </div>
         </section>
         </>
-      ): (
-        <></>
       )}
       
       <section>

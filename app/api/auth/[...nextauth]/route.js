@@ -4,6 +4,7 @@ import NextAuth from "next-auth"
 import CredentialsProvider from "next-auth/providers/credentials"
 import bcrypt from "bcryptjs";
 import { getClient } from "@/app/utils/db";
+import { getRoleByEmail } from "../../getUser/route";
 
 const database = await getClient();
 const users = database.collection("users");
@@ -22,7 +23,7 @@ export const authOptions = {
             try {
                 const user = await users.findOne({email: credentials.email});
                 if (user) {
-                    console.log(user)
+                    //console.log(user)
                     const isPasswordCorrect = await bcrypt.compare(
                         credentials.password,
                         user.hashedPassword,
@@ -38,11 +39,29 @@ export const authOptions = {
         }
     }),
   ],
+  callbacks: {
+    session: async ({ session }) => {
+      try {
+        if (session?.user?.email) {
+          const { email } = session.user;
+          const role = await getRoleByEmail(email);
+
+          session.user = {
+            ...session.user,
+            role,
+          };
+        }
+        return Promise.resolve(session);
+      } catch (error) {
+        console.log("callbacks error", error);
+      }
+    },
+  },
   session: {
     jwt: true,
     maxAge: 2 * 60 * 60
-  }
-}
+  },
+};
 
 export const handler = NextAuth(authOptions);
 export {handler as GET, handler as POST};

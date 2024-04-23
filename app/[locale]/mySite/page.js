@@ -17,28 +17,24 @@ export default function mySite({ params: { locale } }) {
     const [bookings, setBookings] = useState([]);
 
     const userEmail = session && session.user ? session.user.email : '';
+    const userRole = session && session.user ? session.user.role : '';
+    const sessionUser = session;
 
     useEffect(() => {
-        console.log("useEffect reached");
+        console.log("session =", sessionUser);
         const fetchBookings = async () => {
-            console.log("fetchBookings called");
             try {
-                console.log("try reached");
                 if (userEmail) {
                     console.log("userEmail found");
                     const response = await fetch(`/api/getBooking?email=${encodeURIComponent(userEmail)}`);
-                    console.log(response);
                     if (!response.ok) {
-                        console.log("response not ok");
                         throw new Error('Failed to fetch bookings');
                     }
                     const data = await response.json();
                     setBookings(data);
                     console.log(data);
-                    console.log("data set to booking const");
                 }
             } catch (error) {
-                console.log("try failed");
                 console.error('Error fetching bookings:', error);
             }
         };
@@ -61,6 +57,9 @@ export default function mySite({ params: { locale } }) {
                 </div>
                 <div>
                     <h2>Email: {userEmail}</h2>
+                </div>
+                <div>
+                    <h2>Din rolle er: {userRole}</h2>
                 </div>
                 <div>
                     <h2>Dine booking:</h2>

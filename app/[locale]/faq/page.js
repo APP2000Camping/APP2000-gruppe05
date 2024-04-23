@@ -7,6 +7,7 @@ import styles from '../faq/faq.module.css';
 import TranslationsProvider from '../../components/TranslationsProvider';
 import initTranslations from '../../i18n';
 import { parseHtmlToTitle } from '@/app/components/parser';
+import { useSession } from 'next-auth/react';
 
 const i18nNamespaces = ['FAQ', 'Common'];
 
@@ -16,6 +17,7 @@ export default function FAQ({ params: { locale } }) {
   const [articles, setArticles] = useState([]);
   const [editingIndex, setEditingIndex] = useState(-1);
   const backgroundImageUrl = 'https://media.istockphoto.com/id/1050831094/photo/family-vacation-travel-rv-holiday-trip-in-motorhome.jpg?s=2048x2048&w=is&k=20&c=uHzfAbfema-vR1Jz0PWD_9SNNt4Tmv98hfVwhL5c_KM=';
+  const { data: session } = useSession();
 
   useEffect(() => {
     async function loadTranslations() {
@@ -155,7 +157,9 @@ const handleDeleteArticle = async (index) => {
       <div className="flex flex-col min-h-screen">
         <main>
           <div className={styles.blurBackground} style={{ backgroundImage: `url(${backgroundImageUrl})` }}></div>
-          <Button onClick={handleAddArticle}>Legg til Artikkel</Button>
+          {session && session.user.role === "admin" && (
+            <Button onClick={handleAddArticle}>Legg til Artikkel</Button>
+          )}
           <Accordion className={styles.accordionContainer} selectionMode="multiple">
             {articles.map((article, index) => (
               <AccordionItem key={index} title={<h2 style={{ fontWeight: 'bold' }}>{article.title}</h2>} textValue={article.title}>
@@ -169,7 +173,9 @@ const handleDeleteArticle = async (index) => {
                 ) : (
                   <>
                     <div className={styles.articleContent} dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(article.content) }} />
+                    {session && session.user.role === "admin" && (
                     <Button onClick={() => startEditing(index)}>Rediger Artikkel</Button>
+                    )}
                   </>
                 )}
               </AccordionItem>

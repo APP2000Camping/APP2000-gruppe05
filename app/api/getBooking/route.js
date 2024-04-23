@@ -1,7 +1,7 @@
 // app/api/getBooking.js
 import { getClient } from "@/app/db";
 
-async function getBookingsByEmail(email) {
+export async function getBookingsByEmail(email) {
   const database = await getClient();
   const bookings = database.collection('Booking');
   const query = email ? { email: email } : {};

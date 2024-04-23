@@ -7,6 +7,7 @@ import Grid from '../../components/grid';
 import ArticleEditor from '../../components/editingComponent'; 
 import { parseHtmlToTitle } from '@/app/components/parser';
 import DOMPurify from 'dompurify';
+import { useSession } from 'next-auth/react';
 
 
 
@@ -17,6 +18,7 @@ export default function Services ({ params:{locale}}) {
   const [resources, setResources] = useState({});
   const [articles, setArticles] = useState([]);
   const [editingIndex, setEditingIndex] = useState(-1);
+  const { data: session } = useSession();
 
   useEffect(() => {
     async function loadTranslations() {
@@ -142,9 +144,10 @@ export default function Services ({ params:{locale}}) {
     <TranslationsProvider resources={resources} locale={locale} namespaces={i18nNamespaces}>
         <div className="flex flex-col min-h-screen">
             <main>
-            
+              {session && session.user.role === "admin" && (
                 <Button onClick={handleAddArticle}>Legg til Artikkel</Button>
-                {editingIndex >= 0 ? (
+              )}
+                {editingIndex >= 0 ? ( // hvor er rediger knappen???
                     <>
                         <ArticleEditor
                             initialContent={DOMPurify.sanitize(articles[editingIndex].content)}
