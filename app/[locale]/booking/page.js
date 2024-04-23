@@ -24,7 +24,6 @@ export default async function BookingPage ({ params:{locale}}) {
       <main>
       <BookingForm />
       </main>
-      <footer />
     </div>
     </TranslationsProvider> )
 };

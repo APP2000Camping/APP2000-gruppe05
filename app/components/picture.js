@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import styles from './picture.module.css';
 import { useTranslation } from 'react-i18next';
 
+
 export default function Picture ({imageUrl, altText, caption}) {
     const {t} = useTranslation();
 
@@ -13,6 +14,7 @@ export default function Picture ({imageUrl, altText, caption}) {
             <div className={styles.gradientOverlayTop}></div>
             <div className={styles.gradientOverlayBottom}></div>
             {caption && <p className={styles.caption}>{caption}</p>}
+            
         </div>
     );
 };

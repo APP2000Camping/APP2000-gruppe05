@@ -7,7 +7,8 @@ import Grid from '../../components/grid';
 import ArticleEditor from '../../components/editingComponent'; 
 import { parseHtmlToTitle } from '@/app/components/parser';
 import DOMPurify from 'dompurify';
-import Picture from '../../components/picture';
+
+
 
 const i18nNamespaces = ['Services', 'Common'];
 
@@ -141,7 +142,7 @@ export default function Services ({ params:{locale}}) {
     <TranslationsProvider resources={resources} locale={locale} namespaces={i18nNamespaces}>
         <div className="flex flex-col min-h-screen">
             <main>
-            <Picture imageUrl="https://media.istockphoto.com/id/1055977770/photo/camping-site-with-the-blurred-camper-caravan-cars-on-a-fjord-shore-n.jpg?s=1024x1024&w=is&k=20&c=TKDFkU_kNV4XbHjfiZITzl1l5YCgfP3HXgRLTIjD5WE=" altText="placeholder" />
+            
                 <Button onClick={handleAddArticle}>Legg til Artikkel</Button>
                 {editingIndex >= 0 ? (
                     <>
@@ -161,7 +162,9 @@ export default function Services ({ params:{locale}}) {
                         }))}
                         onEdit={setEditingIndex}
                     />
+                    
                 )}
+                
             </main>
             <footer />
         </div>
