@@ -22,7 +22,8 @@ export async function POST(req) {
 
     const doc = {
       email,
-      hashedPassword
+      hashedPassword,
+      role: "user",
     }
 
     const result = await users.insertOne(doc);

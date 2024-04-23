@@ -72,13 +72,13 @@ export default function NavBar() {
         ): (
           <>
           {session.user?.email}
-          <li>
+          <ul>
             <button onClick={() => {
               signOut();
             }} className={styles.resKnapp}>
               Logout
             </button>
-          </li>
+          </ul>
           </>
         )}
       </div>

@@ -26,7 +26,7 @@ export default function FAQ({ params: { locale } }) {
     loadTranslations();
   }, [locale]);
 
-  useEffect(() => {
+  useEffect ( () => {
     const fetchArticles = async () => {
       console.log("Henter artikler fra serveren...");
       try {
