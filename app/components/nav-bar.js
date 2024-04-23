@@ -18,71 +18,75 @@ export default function NavBar() {
           </Link>
         </div>
           <div className={styles.container}>
-              <div className={styles.column}>
+            <div className={styles.column}>
+              <ul className={styles.navList}>
+                <li className={styles.navItem}>
+                  <Link href="/" passHref>
+                      {t('navbar_home')}
+                  </Link>
+                </li>
+                <li className={styles.navItem}>
+                  <Link href="/services" passHref>
+                    {t('navbar_services')}
+                  </Link>
+                </li>
+                <li className={styles.navItem}>
+                  <Link href="/contact" passHref>
+                    {t('navbar_contact')}
+                  </Link>
+                </li>
+                <li className={styles.navItem}>
+                  <Link href="/faq" passHref>
+                    {t('navbar_faq')}
+                  </Link>
+                </li>
+                <li className={styles.navItem}>
+                <Link href="/about" passHref>
+                  {t('navbar_about')}
+                </Link>
+                </li>
+                <li className={styles.navItem}>
+                <Link href="/booking" passHref>
+                  {t('navbar_booking')}
+                </Link>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div>
+            {!session ? (
+              <>
                 <ul className={styles.navList}>
                   <li className={styles.navItem}>
-                    <Link href="/" passHref>
-                        {t('navbar_home')}
+                    <Link href="/login">
+                      Login
                     </Link>
-                   </li>
-        <li className={styles.navItem}>
-          <Link href="/services" passHref>
-            {t('navbar_services')}
-          </Link>
-        </li>
-        <li className={styles.navItem}>
-          <Link href="/contact" passHref>
-            {t('navbar_contact')}
-          </Link>
-        </li>
-        <li className={styles.navItem}>
-          <Link href="/faq" passHref>
-            {t('navbar_faq')}
-          </Link>
-          </li>
-          <li className={styles.navItem}>
-          <Link href="/about" passHref>
-            {t('navbar_about')}
-          </Link>
-          </li>
-          <li className={styles.navItem}>
-          <Link href="/booking" passHref>
-            {t('navbar_booking')}
-          </Link>
-          </li>
-        </ul>
-        </div>
-      </div>
-      <div>
-        {!session ? (
-          <>
-          <ul className={styles.navList}>
-            <li className={styles.navItem}>
-              <Link href="/login">
-                Login
-              </Link>
-            </li>
-            <li className={styles.navItem}>
-              <Link href="/register">
-                Register
-              </Link>
-            </li>
-          </ul>
-          </>
-        ): (
-          <>
-          {session.user?.email}
-          <ul>
-            <button onClick={() => {
-              signOut();
-            }} className={styles.resKnapp}>
-              Logout
-            </button>
-          </ul>
-          </>
-        )}
-      </div>
-    </nav>
+                  </li>
+                  <li className={styles.navItem}>
+                    <Link href="/register">
+                      Register
+                    </Link>
+                  </li>
+                </ul>
+              </>
+            ): (
+            <>
+              <ul className={styles.navList}>
+                <li className={styles.navItem}>
+                  <Link href="/mySite">
+                    {session.user?.name}
+                  </Link>
+                </li>
+                <li className={styles.navItem}>
+                  <button onClick={() => { signOut(); }} className={styles.resKnapp}>
+                    Logout
+                  </button>
+                </li>
+              </ul>
+            </>
+            )}
+          </div>
+      </nav>
   );
 };
 

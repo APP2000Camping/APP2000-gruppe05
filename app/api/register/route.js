@@ -8,7 +8,7 @@ const users = database.collection("users");
 export async function POST(req) {
   try {
     
-    const { email, password } = await req.json();
+    const { email, password, name, tlf } = await req.json();
 
     const existingUser = await users.findOne({ email })
 
@@ -23,6 +23,8 @@ export async function POST(req) {
     const doc = {
       email,
       hashedPassword,
+      name,
+      tlf,
       role: "user",
     }
 

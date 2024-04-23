@@ -6,7 +6,7 @@ import ButtonOnPicture from "../components/buttonOnPicture";
 import initTranslations from '../i18n';
 import { useState } from 'react';
 import { useSession } from 'next-auth/react';
-import { useMemo } from 'react';
+
 /*
 import { getClient } from "@/app/utils/db"; kan ikkje vær i klient sida
 
@@ -17,26 +17,27 @@ const users = database.collection("users");
 const i18nNamespaces = ['Home', 'Common'];
 
 export default function Home({ params:{locale}}) {
-const { t, resources } = useMemo(() => initTranslations(locale, i18nNamespaces), [locale]);
+  
+  const { t, resources } = initTranslations(locale, i18nNamespaces);
 
-const { data: session } = useSession();
-const [file, setFile] = useState(null); // flytte denne opp og ut av function home
-/*
-const loggedUser = session.user?.email;
-const adminCheck = "admin";
+  const { data: session } = useSession();
+  const [file, setFile] = useState(null); // flytte denne opp og ut av function home
+  /*
+  const loggedUser = session.user?.email;
+  const adminCheck = "admin";
 
-const curUser = users.findOne({ adminCheck })
-console.log(curUser);
-var curAdmin = null;
+  const curUser = users.findOne({ adminCheck })
+  console.log(curUser);
+  var curAdmin = null;
 
-if (!curUser) {
-  console.log("Admin ikke funnet");
-  curAdmin = 0;
-} else {
-  console.log("Admin er funnet")
-  curAdmin = 1;
-}
-*/
+  if (!curUser) {
+    console.log("Admin ikke funnet");
+    curAdmin = 0;
+  } else {
+    console.log("Admin er funnet")
+    curAdmin = 1;
+  }
+  */
 
 
 const handleFileChange = async (e) => {
@@ -113,7 +114,7 @@ const handleSubmit = async (e) => {
       <section>
         <div className="section-row">
           <div className="">
-            <h1> GRID HER </h1> {/* i hardly know her */}
+            <h1> GRID HER </h1>
           </div>
         </div>
       </section>

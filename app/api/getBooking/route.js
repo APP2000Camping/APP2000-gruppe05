@@ -1,19 +1,19 @@
 // app/api/getBooking.js
-import { getClient } from "@/app/db"; 
+import { getClient } from "@/app/db";
 
-async function getBookingsByEmail(emailId) {
+async function getBookingsByEmail(email) {
   const database = await getClient();
   const bookings = database.collection('Booking');
-  const query = emailId ? { emailId: emailId } : {}; 
+  const query = email ? { email: email } : {};
   return await bookings.find(query).toArray();
 }
 
 export async function GET(req) {
   try {
     const { searchParams } = new URL(req.url);
-    const emailId = searchParams.get('email');
+    const email = searchParams.get('email');
     
-    const allBookings = await getBookingsByEmail(emailId); 
+    const allBookings = await getBookingsByEmail(email);
 
     if (!allBookings.length) {
       return new Response(JSON.stringify({ error: 'Ingen bookinger funnet' }), {

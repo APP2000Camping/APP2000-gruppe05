@@ -2,14 +2,14 @@
 import NextAuth from "next-auth"
 //import GithubProvider from "next-auth/providers/github"
 import CredentialsProvider from "next-auth/providers/credentials"
-import { getClient } from "@/app/utils/db";
 import bcrypt from "bcryptjs";
+import { getClient } from "@/app/utils/db";
 
 const database = await getClient();
 const users = database.collection("users");
 
 export const authOptions = {
-  // Configure one or more authentication providers
+  secret: process.env.NEXT_AUTH_SECRET,
   providers: [
     CredentialsProvider({
         id: "credentials",
@@ -17,7 +17,6 @@ export const authOptions = {
         credentials: {
             email: {label: "Email", type: "text"},
             password: {label: "Password", type: "password"},
-            role: {label: "role", type: "text"},
         },
         async authorize(credentials) {
             try {
@@ -39,17 +38,10 @@ export const authOptions = {
         }
     }),
   ],
-  /*
-  callbacks: {
-    async jwt(token, user) {
-     if (user) { 
-       const administrators = [ "testmail.admin@gmail.com" ]
-       token.isAdmin = administrators.includes(user?.email)
-     }
-     return token
-   }
- }
- */
+  session: {
+    jwt: true,
+    maxAge: 2 * 60 * 60
+  }
 }
 
 export const handler = NextAuth(authOptions);

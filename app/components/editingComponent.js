@@ -6,7 +6,7 @@ import { Editor } from '@tinymce/tinymce-react';
 const ArticleEditor = ({ initialContent, handleEditorChange }) => {
   return (
     <Editor
-    apiKey={TINYMCE_KEY}
+    apiKey={process.env.TINYMCE_KEY}
     init={{
       plugins: 'anchor autolink charmap codesample emoticons image link lists media searchreplace table visualblocks wordcount checklist mediaembed casechange export formatpainter pageembed linkchecker a11ychecker tinymcespellchecker permanentpen powerpaste advtable advcode editimage advtemplate tinycomments tableofcontents footnotes mergetags autocorrect typography inlinecss markdown',
       toolbar: 'undo redo | blocks fontfamily fontsize | bold italic underline strikethrough | link image media table mergetags | addcomment showcomments | spellcheckdialog a11ycheck typography | align lineheight | checklist numlist bullist indent outdent | emoticons charmap | removeformat',
