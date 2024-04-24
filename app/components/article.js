@@ -1,10 +1,12 @@
 import React from 'react';
 import styles from './article.module.css';
 import {Button} from '@nextui-org/react';
+import { useSession } from 'next-auth/react';
 
 const defaultContent = { title: '', content: '' };
 
 export default function Article({ content = defaultContent, onEdit }) {
+  const { data: session } = useSession();
   return (
     <div className={styles.articleContainer}>
       <article>
@@ -13,7 +15,9 @@ export default function Article({ content = defaultContent, onEdit }) {
           className={styles.articleContent} 
           dangerouslySetInnerHTML={{ __html: content.content }}  
         />
+        {session && session.user.role === "admin" && (
         <Button onClick={onEdit}>Rediger</Button>
+        )}
       </article>
     </div>
   );

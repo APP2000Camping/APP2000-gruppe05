@@ -1,17 +1,22 @@
 .pictureContainer {
+    
     display: flex;
     justify-content: center;
     width: 100%;
     position: relative; 
     
-    
 }
 
 .picture {
+    background-image: url('../../public/images/photo1.jpg');
     position: relative;
+    top: 0;
+    left: 0;
     width: 100%;
-    height: auto;
-    color: #7c7c7c8f;
+    height: 100vh;
+    background-size: cover;
+    background-repeat:no-repeat;
+   
     
     
 }

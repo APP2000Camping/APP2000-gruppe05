@@ -4,6 +4,8 @@ import '../globals.css';
 import BookingForm from '../../components/bookingForm';
 import TranslationsProvider from '../../components/TranslationsProvider';
 import initTranslations from '../../i18n';
+import styles from '../booking/booking.module.css';
+
 
 const i18nNamespaces = ['Booking', 'Common'];
 
@@ -11,6 +13,8 @@ export default function BookingPage({ params: { locale } }) {
   const [booking, setBooking] = useState([]);
   const [translations, setTranslations] = useState({ t: () => '', resources: {} });
   const [availableSites, setAvailableSites] = useState([]);
+ 
+  
 
 
   useEffect(() => {
@@ -95,11 +99,20 @@ export default function BookingPage({ params: { locale } }) {
       resources={translations.resources} 
       locale={locale} 
       namespaces={i18nNamespaces}>
+<<<<<<< HEAD
     <div className="flex flex-col min-h-screen">
       <main className="flex-grow">
       <BookingForm handleBooking = {handleBooking} availableSites={availableSites}/>
       </main>
       <footer />
     </div>
+=======
+      <div className="flex flex-col min-h-screen">
+        <main className="flex-grow">
+          <BookingForm handleBooking = {handleBooking} availableSites={availableSites} />
+        </main>
+        <footer />
+      </div>
+>>>>>>> 5cd62baad1b9d236c1aab31d1e504ddced38d74d
     </TranslationsProvider> )
 };

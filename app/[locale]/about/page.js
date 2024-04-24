@@ -1,6 +1,8 @@
 "use client";
-import React, { useState, useEffect } from 'react';
-import { Button } from '@nextui-org/react';
+// Skrevet av Jesper
+
+import '../globals.css'; 
+import Article from '../../components/article';
 import TranslationsProvider from '../../components/TranslationsProvider';
 import initTranslations from '../../i18n';
 import Grid from '../../components/gridAbout'; 

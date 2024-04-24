@@ -4,15 +4,8 @@ import TranslationsProvider from '../components/TranslationsProvider';
 import News from '../components/news';
 import ButtonOnPicture from "../components/buttonOnPicture";
 import initTranslations from '../i18n';
-import { useState } from 'react';
 import { useSession } from 'next-auth/react';
-import { useMemo } from 'react';
-/*
-import { getClient } from "@/app/utils/db"; kan ikkje vær i klient sida
-
-const database = await getClient();
-const users = database.collection("users");
-*/
+import React, { useState, useEffect } from 'react';
 
 const i18nNamespaces = ['Home', 'Common'];
 

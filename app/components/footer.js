@@ -5,9 +5,6 @@ import styles from './footer.module.css';
 import LanguageSwitcher from './LanguageSwitcher';
 import { useTranslation } from 'react-i18next';
 
-
-
-
 export default function Footer() {
   const {t} = useTranslation();
   return (
