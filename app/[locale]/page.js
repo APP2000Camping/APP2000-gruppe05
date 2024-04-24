@@ -20,7 +20,7 @@ export default function Home({ params:{locale}}) {
 const { t, resources } = useMemo(() => initTranslations(locale, i18nNamespaces), [locale]);
 
 const { data: session } = useSession();
-const [file, setFile] = useState(null); // flytte denne opp og ut av function home
+const [file, setFile] = useState(null); 
 /*
 const loggedUser = session.user?.email;
 const adminCheck = "admin";
@@ -43,7 +43,7 @@ const handleFileChange = async (e) => {
   console.log("handleFileChange called");
   const selectedFile = e.target.files[0];
   console.log(selectedFile);
-  setFile(selectedFile); // const file forblir null
+  setFile(selectedFile); 
 }
 
 const handleSubmit = async (e) => {
@@ -57,7 +57,7 @@ const handleSubmit = async (e) => {
     console.log(formData);
 
     const response = await fetch("../api/imgUpload", {
-      method: "POST", // POST for å sende data
+      method: "POST", 
       body: formData,
     });
 
@@ -113,7 +113,7 @@ const handleSubmit = async (e) => {
       <section>
         <div className="section-row">
           <div className="">
-            <h1> GRID HER </h1> {/* i hardly know her */}
+            <h1> GRID HER </h1> 
           </div>
         </div>
       </section>

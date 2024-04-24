@@ -16,7 +16,8 @@ export default function BookingForm({ handleBooking, availableSites }) {
       navn: formData.get('name'),
       email: formData.get('email'),
       tlfnr: formData.get('phone'),
-      dato: formData.get('date')
+      fraDato: formData.get('date'),
+      tilDato: formData.get('date')
     };
     handleBooking(bookingData);
   };
@@ -37,7 +38,13 @@ export default function BookingForm({ handleBooking, availableSites }) {
             </div>
             <div className={styles.bookingItem}>
               <label htmlFor="type">{t('booking_type')}</label>
-              <input type="text" id="type" name="type" placeholder={t('booking_type')} required />
+              <select id="type" name="type" required>
+                <option value="">{t('select_type')}</option>
+                <option value="bobil">{t('motorhome')}</option>
+                <option value="teltplass">{t('tent spot')}</option>
+                <option value="bobil_med_båtkai">{t('motorhome with dock')}</option>
+                <option value="hytteplass">{t('cabin')}</option>
+              </select>
             </div>
             <div className={styles.bookingItem}>
               <label htmlFor="name">{t('booking_name')}</label>
@@ -55,10 +62,15 @@ export default function BookingForm({ handleBooking, availableSites }) {
               <label htmlFor="date">{t('booking_date')}</label>
               <input type="date" id="date" name="date" required />
             </div>
+            <div className={styles.bookingItem}>
+              <label htmlFor="date">{t('booking_date')}</label>
+              <input type="date" id="date" name="date" required />
+            </div>
             <button className={styles.formButton} type="submit">{t('booking_button')}</button>
           </form>
         </div>
       </div>
     </div>
   );
+  
 }

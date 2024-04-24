@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { Button } from '@nextui-org/react';
 import TranslationsProvider from '../../components/TranslationsProvider';
 import initTranslations from '../../i18n';
-import Grid from '../../components/grid';
+import Grid from '../../components/gridService';
 import ArticleEditor from '../../components/editingComponent'; 
 import { parseHtmlToTitle } from '@/app/components/parser';
 import DOMPurify from 'dompurify';

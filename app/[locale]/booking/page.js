@@ -1,5 +1,4 @@
 'use client';
-
 import React, { useState, useEffect } from 'react';
 import '../globals.css';
 import BookingForm from '../../components/bookingForm';
@@ -35,8 +34,8 @@ export default function BookingPage({ params: { locale } }) {
             type: booking.type,
             navn: booking.navn,
             email: booking.email,
-            tlfnr: booking.tlfnr,
-            dato: booking.dato
+            fraDato: bookingData.fraDato,
+            tilDato: bookingData.tilDato
           }));
           console.log("booking med ID:", formattedBooking);
   
@@ -72,7 +71,8 @@ export default function BookingPage({ params: { locale } }) {
           navn: bookingData.navn,
           email: bookingData.email,
           tlfnr: bookingData.tlfnr,
-          dato: bookingData.dato
+          fraDato: bookingData.fraDato,
+          tilDato: bookingData.tilDato
         }),
       });
   
@@ -97,7 +97,7 @@ export default function BookingPage({ params: { locale } }) {
       namespaces={i18nNamespaces}>
     <div className="flex flex-col min-h-screen">
       <main className="flex-grow">
-      <BookingForm />
+      <BookingForm handleBooking = {handleBooking} availableSites={availableSites}/>
       </main>
       <footer />
     </div>
