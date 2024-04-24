@@ -52,6 +52,7 @@
   
 
   .blurBackground {
+    background-image: url('../../../public/images/photo3.jpg');
     position: fixed;
     top: 0;
     left: 0;

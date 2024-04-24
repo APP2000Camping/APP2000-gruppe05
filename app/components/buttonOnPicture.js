@@ -13,7 +13,7 @@ export default function ButtonOnPicture() {
                 <h2 className={styles.title}>{t('home_title')}</h2>
                 <h1 className={styles.heading}>Campingplass1</h1>
             </div>
-            <Picture imageUrl="https://media.istockphoto.com/id/840781816/photo/family-vacation-travel-rv-holiday-trip-in-motorhome-caravan-car-vacation-beautiful-nature.jpg?s=1024x1024&w=is&k=20&c=S37uwCKAbtIz7wVCKXG9l6IUPVYpRFGmLuj19IaZdKw=" altText="placeholder" />
+            <Picture />
             <div className={styles.gradientOverlayButton}><BookingButton /></div>
         </div>
     );
