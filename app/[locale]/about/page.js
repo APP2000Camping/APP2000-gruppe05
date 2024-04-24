@@ -1,4 +1,4 @@
-
+"use client";
 // Skrevet av Jesper
 
 import '../globals.css'; 

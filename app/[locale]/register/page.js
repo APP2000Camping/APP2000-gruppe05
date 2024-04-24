@@ -14,6 +14,8 @@ export default function Home() {
 
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [name, setName] = useState('');
+  const [tlf, setTlf] = useState('');
 
   const isValidEmail = (email) => {
     const emailRegex = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i;
@@ -40,6 +42,8 @@ export default function Home() {
         body: JSON.stringify({ // Konverterer javascript verdi til JSON objekt
           "email": email,
           "password": password,
+          "name": name,
+          "tlf": tlf,
         }),
       });
 
@@ -80,6 +84,22 @@ export default function Home() {
                   value={password}
                   onChange={(e)=> setPassword(e.target.value)}
                   placeholder = "Skriv passord"
+                  />
+
+                  <input 
+                  type="text"
+                  className= {styles.inputField}
+                  value={name}
+                  onChange={(e)=> setName(e.target.value)}
+                  placeholder = "Skriv fullt navn"
+                  />
+
+                  <input 
+                  type="text"
+                  className= {styles.inputField}
+                  value={tlf}
+                  onChange={(e)=> setTlf(e.target.value)}
+                  placeholder = "Skriv telefon nummer (8 bokstaver)"
                   />
 
                   <p className={styles.error}>{error}</p>

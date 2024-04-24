@@ -2,14 +2,16 @@
 import NextAuth from "next-auth"
 //import GithubProvider from "next-auth/providers/github"
 import CredentialsProvider from "next-auth/providers/credentials"
-import { getClient } from "@/app/utils/db";
 import bcrypt from "bcryptjs";
+import { getClient } from "@/app/utils/db";
+import { getRoleByEmail } from "../../getUser/route";
+import { getTlfByEmail } from "../../getUser/route";
 
 const database = await getClient();
 const users = database.collection("users");
 
 export const authOptions = {
-  // Configure one or more authentication providers
+  secret: process.env.NEXT_AUTH_SECRET,
   providers: [
     CredentialsProvider({
         id: "credentials",
@@ -17,13 +19,12 @@ export const authOptions = {
         credentials: {
             email: {label: "Email", type: "text"},
             password: {label: "Password", type: "password"},
-            role: {label: "role", type: "text"},
         },
         async authorize(credentials) {
             try {
                 const user = await users.findOne({email: credentials.email});
                 if (user) {
-                    console.log(user)
+                    //console.log(user)
                     const isPasswordCorrect = await bcrypt.compare(
                         credentials.password,
                         user.hashedPassword,
@@ -39,18 +40,31 @@ export const authOptions = {
         }
     }),
   ],
-  /*
   callbacks: {
-    async jwt(token, user) {
-     if (user) { 
-       const administrators = [ "testmail.admin@gmail.com" ]
-       token.isAdmin = administrators.includes(user?.email)
-     }
-     return token
-   }
- }
- */
-}
+    session: async ({ session }) => {
+      try {
+        if (session?.user?.email) {
+          const { email } = session.user;
+          const role = await getRoleByEmail(email);
+          const tlf = await getTlfByEmail(email);
+
+          session.user = {
+            ...session.user,
+            role,
+            tlf,
+          };
+        }
+        return Promise.resolve(session);
+      } catch (error) {
+        console.log("callbacks error", error);
+      }
+    },
+  },
+  session: {
+    jwt: true,
+    maxAge: 2 * 60 * 60
+  },
+};
 
 export const handler = NextAuth(authOptions);
 export {handler as GET, handler as POST};
