@@ -5,6 +5,7 @@ import CredentialsProvider from "next-auth/providers/credentials"
 import bcrypt from "bcryptjs";
 import { getClient } from "@/app/utils/db";
 import { getRoleByEmail } from "../../getUser/route";
+import { getTlfByEmail } from "../../getUser/route";
 
 const database = await getClient();
 const users = database.collection("users");
@@ -45,10 +46,12 @@ export const authOptions = {
         if (session?.user?.email) {
           const { email } = session.user;
           const role = await getRoleByEmail(email);
+          const tlf = await getTlfByEmail(email);
 
           session.user = {
             ...session.user,
             role,
+            tlf,
           };
         }
         return Promise.resolve(session);

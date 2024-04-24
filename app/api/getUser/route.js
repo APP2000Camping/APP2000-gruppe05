@@ -17,6 +17,14 @@ export async function getRoleByEmail(email) {
     return user ? user.role : null;
 }
 
+export async function getTlfByEmail(email) {
+  const database = await getClient();
+  const users = database.collection('users');
+  const query = email ? { email: email } : {};
+  const user = await users.findOne(query);
+  return user ? user.tlf : null;
+}
+
 export async function GET(req) {
   try {
     const { searchParams } = new URL(req.url);

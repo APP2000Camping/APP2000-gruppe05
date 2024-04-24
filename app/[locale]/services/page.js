@@ -147,7 +147,7 @@ export default function Services ({ params:{locale}}) {
               {session && session.user.role === "admin" && (
                 <Button onClick={handleAddArticle}>Legg til Artikkel</Button>
               )}
-                {editingIndex >= 0 ? ( // hvor er rediger knappen???
+                {editingIndex >= 0 ? (
                     <>
                         <ArticleEditor
                             initialContent={DOMPurify.sanitize(articles[editingIndex].content)}

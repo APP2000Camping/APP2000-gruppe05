@@ -18,6 +18,7 @@ export default function mySite({ params: { locale } }) {
 
     const userEmail = session && session.user ? session.user.email : '';
     const userRole = session && session.user ? session.user.role : '';
+    const userTlf = session && session.user ? session.user.tlf : '';
     const sessionUser = session;
 
     useEffect(() => {
@@ -59,6 +60,9 @@ export default function mySite({ params: { locale } }) {
                     <h2>Email: {userEmail}</h2>
                 </div>
                 <div>
+                    <h2>TlfNr: {userTlf}</h2>
+                </div>
+                <div>
                     <h2>Din rolle er: {userRole}</h2>
                 </div>
                 <div>
@@ -67,11 +71,11 @@ export default function mySite({ params: { locale } }) {
                         {bookings.length > 0 ? (
                             bookings.map((booking) => (
                                 <div key={booking._id}>
-                                    <li>{booking.navn}</li>
-                                    <li>{booking.plassNr}</li>
-                                    <li>{booking.type}</li>
-                                    <li>{booking.dato}</li>
-                                    <li>{booking.tlfnr}</li>
+                                    <li>Navn: {booking.navn}</li>
+                                    <li>PlassNr: {booking.plassNr}</li>
+                                    <li>Type: {booking.type}</li>
+                                    <li>Dato: {booking.dato}</li>
+                                    <li>TelefonNr: {booking.tlfnr}</li>
                                 </div> 
                             ))
                         ) : (
