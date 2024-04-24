@@ -1,1 +1,1 @@
-{}
+{"mysite_area":"Områdenummer: ","mysite_dateEnd":"Sluttdato: ","mysite_dateStart":"Startdato: ","mysite_email":"Email: {{userEmail}}","mysite_header":"Dine reservasjoner: ","mysite_name":"Navn: {{session.user.name}}","mysite_name_order":"Navn: ","mysite_phone":"Telefonnummer: ","mysite_role":"Din rolle: {{userRole}}","mysite_title":"Min profil: ","mysite_tlf":"Telefonnummer: {{userTlf}}","mysite_type":"Type: ","mysite_ulogget":"Logg inn for å se min side","mystie_nobook":"Du har ingen reservasjoner :/"}

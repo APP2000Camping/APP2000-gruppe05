@@ -1,1 +1,1 @@
-{}
+{"mysite_area":"Area number: ","mysite_dateEnd":"End date: ","mysite_dateStart":"Start date: ","mysite_email":"Email: {{userEmail}}","mysite_header":"Your reservations: ","mysite_name":"Name: {{session.user.name}}","mysite_name_order":"Name: ","mysite_phone":"Telephone number: ","mysite_role":"Your role: {{userRole}}","mysite_title":"My profile: ","mysite_tlf":"Phone number: {{userTlf}}","mysite_type":"Type: ","mysite_ulogget":"Log in to see my page","mystie_nobook":"You have no reservations :/"}

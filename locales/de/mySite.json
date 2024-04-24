@@ -1,1 +1,1 @@
-{}
+{"mysite_area":"Bereichsnummer: ","mysite_dateEnd":"Endtermin: ","mysite_dateStart":"Startdatum: ","mysite_email":"E-Mail: {{userEmail}}","mysite_header":"Ihre Reservierungen: ","mysite_name":"Name: {{session.user.name}}","mysite_name_order":"Name: ","mysite_phone":"Telefonnummer: ","mysite_role":"Ihre Rolle: {{userRole}}","mysite_title":"Mein Profil: ","mysite_tlf":"Telefonnummer: {{userTlf}}","mysite_type":"Typ: ","mysite_ulogget":"Melden Sie sich an, um meine Seite zu sehen","mystie_nobook":"Sie haben keine Reservierungen :/"}
