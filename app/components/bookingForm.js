@@ -40,10 +40,10 @@ export default function BookingForm({ handleBooking, availableSites }) {
               <label htmlFor="type">{t('booking_type')}</label>
               <select id="type" name="type" required>
                 <option value="">{t('select_type')}</option>
-                <option value="bobil">{t('select_bobil')}</option>
-                <option value="teltplass">{t('select_tent')}</option>
-                <option value="bobil_med_bÃ¥tkai">{t('select_bobil_dock')}</option>
-                <option value="hytteplass">{t('select_cabin')}</option>
+                <option value="bobil">{t('motorhome')}</option>
+                <option value="teltplass">{t('tent spot')}</option>
+                <option value="bobil_med_båtkai">{t('motorhome with dock')}</option>
+                <option value="hytteplass">{t('cabin')}</option>
               </select>
             </div>
             <div className={styles.bookingItem}>
@@ -57,6 +57,14 @@ export default function BookingForm({ handleBooking, availableSites }) {
             <div className={styles.bookingItem}>
               <label htmlFor="phone">{t('booking_phone')}</label>
               <input type="tel" id="phone" name="phone" placeholder={t('booking_phone')} required />
+            </div>
+            <div className={styles.bookingItem}>
+              <label htmlFor="date">{t('booking_date')}</label>
+              <input type="date" id="date" name="date" required />
+            </div>
+            <div className={styles.bookingItem}>
+              <label htmlFor="date">{t('booking_date')}</label>
+              <input type="date" id="date" name="date" required />
             </div>
             <div className={styles.bookingItem}>
               <label htmlFor="date">{t('booking_dateStart')}</label>

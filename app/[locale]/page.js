@@ -10,21 +10,64 @@ import React, { useState, useEffect } from 'react';
 const i18nNamespaces = ['Home', 'Common'];
 
 export default function Home({ params:{locale}}) {
-  const [t, setT] = useState(() => (key) => key);
-  const [resources, setResources] = useState({});
-  const { data: session } = useSession();
+const { t, resources } = useMemo(() => initTranslations(locale, i18nNamespaces), [locale]);
+
+const { data: session } = useSession();
+const [file, setFile] = useState(null); 
+/*
+const loggedUser = session.user?.email;
+const adminCheck = "admin";
+
+const curUser = users.findOne({ adminCheck })
+console.log(curUser);
+var curAdmin = null;
+
+if (!curUser) {
+  console.log("Admin ikke funnet");
+  curAdmin = 0;
+} else {
+  console.log("Admin er funnet")
+  curAdmin = 1;
+}
+*/
 
 
-  useEffect(() => {
-    async function loadTranslations() {
-      const translationResult = await initTranslations(locale, i18nNamespaces);
-      setT(() => translationResult.t);
-      setResources(translationResult.resources);
+const handleFileChange = async (e) => {
+  console.log("handleFileChange called");
+  const selectedFile = e.target.files[0];
+  console.log(selectedFile);
+  setFile(selectedFile); 
+}
+
+const handleSubmit = async (e) => {
+  e.preventDefault();
+  console.log("handleSubmit reached");
+  try {
+  
+    console.log(file);
+    const formData = new FormData();
+    formData.append('file', file);
+    console.log(formData);
+
+    const response = await fetch("../api/imgUpload", {
+      method: "POST", 
+      body: formData,
+    });
+
+    if (response) {
+      const data = await response.json();
+      console.log(data);
+      console.log("response caught")
     }
-    loadTranslations();
-  }, [locale]);
+  }
+  catch (e) {
+    console.log(e);
+    console.log("error caught")
+  }
+}
 
   return (
+   
     <TranslationsProvider resources={resources} locale={locale} namespaces={i18nNamespaces}>
     <main>
      
@@ -36,18 +79,20 @@ export default function Home({ params:{locale}}) {
         </div>
       </section>
 
-      {session && session.user.role === "admin" && (
+      {session ? (
         <>
         <section>
           <div className="section-row">
             <div>
               <h2>Endre bilde:</h2>
-              <input type='file'/>
-              <button>Bytt bilde</button>
+              <input type='file' onChange={handleFileChange}/>
+              <button onClick={handleSubmit}>Bytt bilde</button>
             </div>
           </div>
         </section>
         </>
+      ): (
+        <></>
       )}
       
       <section>
@@ -61,7 +106,7 @@ export default function Home({ params:{locale}}) {
       <section>
         <div className="section-row">
           <div className="">
-            <h1> GRID HER </h1>
+            <h1> GRID HER </h1> 
           </div>
         </div>
       </section>
