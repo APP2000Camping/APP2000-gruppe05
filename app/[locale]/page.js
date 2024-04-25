@@ -5,7 +5,7 @@ import News from '../components/news';
 import ButtonOnPicture from "../components/buttonOnPicture";
 import initTranslations from '../i18n';
 import { useSession } from 'next-auth/react';
-import React, { useState, useEffect } from 'react';
+import React, { useState, useMemo } from 'react';
 
 const i18nNamespaces = ['Home', 'Common'];
 

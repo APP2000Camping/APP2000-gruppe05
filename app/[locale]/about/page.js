@@ -1,14 +1,15 @@
 "use client";
-// Skrevet av Jesper
+// Skrevet av Jesper/sondre
 
 import '../globals.css'; 
-import Article from '../../components/article';
 import TranslationsProvider from '../../components/TranslationsProvider';
 import initTranslations from '../../i18n';
 import Grid from '../../components/gridAbout'; 
 import ArticleEditor from '../../components/editingComponent'; 
 import { parseHtmlToTitle } from '@/app/components/parser';
 import DOMPurify from 'dompurify';
+import React, { useState, useEffect } from 'react';
+import { Button } from '@nextui-org/react';
 
 const i18nNamespaces = ['About', 'Common'];
 
