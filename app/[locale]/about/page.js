@@ -4,12 +4,13 @@
 import '../globals.css'; 
 import TranslationsProvider from '../../components/TranslationsProvider';
 import initTranslations from '../../i18n';
-import Grid from '../../components/gridAbout'; 
-import ArticleEditor from '../../components/editingComponent'; 
+import Grid from '../../components/gridAbout';
+import ArticleEditor from '../../components/editingComponent';
 import { parseHtmlToTitle } from '@/app/components/parser';
 import DOMPurify from 'dompurify';
 import React, { useState, useEffect } from 'react';
 import { Button } from '@nextui-org/react';
+import { useSession } from 'next-auth/react';
 
 const i18nNamespaces = ['About', 'Common'];
 
@@ -18,6 +19,7 @@ export default function About({ params: { locale } }) {
   const [resources, setResources] = useState({});
   const [articles, setArticles] = useState([]);
   const [editingIndex, setEditingIndex] = useState(-1);
+  const { data: session } = useSession();
 
   useEffect(() => {
     async function loadTranslations() {

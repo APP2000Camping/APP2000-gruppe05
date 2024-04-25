@@ -5,7 +5,7 @@ import News from '../components/news';
 import ButtonOnPicture from "../components/buttonOnPicture";
 import initTranslations from '../i18n';
 import { useSession } from 'next-auth/react';
-import React, { useState, useMemo } from 'react';
+import React, { useState, useEffect } from 'react';
 
 const i18nNamespaces = ['Home', 'Common'];
 
@@ -13,7 +13,6 @@ export default function Home({ params:{locale}}) {
   const [t, setT] = useState(() => (key) => key);
   const [resources, setResources] = useState({});
   const { data: session } = useSession();
-
 
   useEffect(() => {
     async function loadTranslations() {
