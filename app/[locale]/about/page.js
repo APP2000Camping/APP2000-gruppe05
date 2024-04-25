@@ -138,7 +138,9 @@ export default function About({ params: { locale } }) {
     <TranslationsProvider resources={resources} locale={locale} namespaces={i18nNamespaces}>
       <div className="flex flex-col min-h-screen">
         <main>
+        {session && session.user.role === "admin" && (
           <Button onClick={handleAddArticle}>Legg til Artikkel</Button>
+        )}
           {editingIndex >= 0 ? (
             <>
             <ArticleEditor

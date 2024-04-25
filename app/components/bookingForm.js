@@ -66,6 +66,14 @@ export default function BookingForm({ handleBooking, availableSites }) {
               <label htmlFor="date">{t('booking_date')}</label>
               <input type="date" id="date" name="date" required />
             </div>
+            <div className={styles.bookingItem}>
+              <label htmlFor="date">{t('booking_dateStart')}</label>
+              <input type="date" id="date" name="date" required />
+            </div>
+            <div className={styles.bookingItem}>
+              <label htmlFor="date">{t('booking_dateEnd')}</label>
+              <input type="date" id="date" name="date" required />
+            </div>
             <button className={styles.formButton} type="submit">{t('booking_button')}</button>
           </form>
         </div>

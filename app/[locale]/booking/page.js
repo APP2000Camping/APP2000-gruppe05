@@ -6,15 +6,12 @@ import TranslationsProvider from '../../components/TranslationsProvider';
 import initTranslations from '../../i18n';
 import styles from '../booking/booking.module.css';
 
-
 const i18nNamespaces = ['Booking', 'Common'];
 
 export default function BookingPage({ params: { locale } }) {
   const [booking, setBooking] = useState([]);
   const [translations, setTranslations] = useState({ t: () => '', resources: {} });
   const [availableSites, setAvailableSites] = useState([]);
- 
-  
 
 
   useEffect(() => {
@@ -107,3 +104,5 @@ export default function BookingPage({ params: { locale } }) {
     </div>
     </TranslationsProvider> )
 };
+
+

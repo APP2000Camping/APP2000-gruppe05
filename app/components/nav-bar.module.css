@@ -6,7 +6,7 @@
   color: #000000;
   font-family: "Mukta";
   padding: 10px 0;
-  background-color: #ffffff;
+  background-color: #f8f9fb;
 }
 
 .logo {
@@ -55,7 +55,7 @@
 .container {
   width: 100%;
   line-height: 1.5;
-  background-color: #ffffff;
+  background-color: #f8f9fb;
   
 }
  
@@ -71,7 +71,15 @@
   border-radius: 5px;
 }
 
+.resKnappLoggut{
+  color: #000000;
+  padding: 10px;
+  margin: auto;
+  font-family:Georgia, 'Times New Roman', Times, serif;
+}
 
-
-
+.resKnappLoggut:hover {
+  background-color: #000000;
+  color: #f8f9fb;
+}
 

@@ -11,7 +11,7 @@ export default function ContactForm() {
   const tlf = '+ 47 999999999';
 
   return (
-    <div>
+    <div className={styles.container}>
       <h1 className={styles.title}>{t('contact_us')}</h1>
       <h2 className={styles.title}>{t('contact_p')}</h2>
          <div className={styles.contactForm}>

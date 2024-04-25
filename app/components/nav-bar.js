@@ -78,7 +78,7 @@ export default function NavBar() {
                   </Link>
                 </li>
                 <li className={styles.navItem}>
-                  <button onClick={() => { signOut(); }} className={styles.resKnapp}>
+                  <button onClick={() => { signOut(); }} className={styles.resKnappLoggut}>
                     Logout
                   </button>
                 </li>

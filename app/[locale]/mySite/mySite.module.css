@@ -1,3 +1,40 @@
 .main {
-    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+    margin: 5px;
+    margin-left: 10%;
+    margin-right: 10%;
+    z-index: 1; 
+    background-color: transparent; 
+    position: relative;
+}
+
+.Item {
+    width: 40%;
+    height: auto;
+    background-color: #ffffff;
+    padding: 20px;
+    box-sizing: border-box;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 0px 2px rgba(0, 0, 0, 0.8);
+  }
+
+.headerUlogget {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.booking {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
 }
