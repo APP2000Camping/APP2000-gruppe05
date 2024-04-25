@@ -10,25 +10,20 @@ import React, { useState, useEffect } from 'react';
 const i18nNamespaces = ['Home', 'Common'];
 
 export default function Home({ params:{locale}}) {
+  const [t, setT] = useState(() => (key) => key);
+  const [resources, setResources] = useState({});
+  const { data: session } = useSession();
 
-
-const { data: session } = useSession(); 
-const [t, setT] = useState(() => (key) => key);
-const [resources, setResources] = useState({});
-
-
-useEffect(() => {
-  async function loadTranslations() {
-    const translationResult = await initTranslations(locale, i18nNamespaces);
-    setT(() => translationResult.t);
-    setResources(translationResult.resources);
-  }
-  loadTranslations();
-}, [locale]);
-
+  useEffect(() => {
+    async function loadTranslations() {
+      const translationResult = await initTranslations(locale, i18nNamespaces);
+      setT(() => translationResult.t);
+      setResources(translationResult.resources);
+    }
+    loadTranslations();
+  }, [locale]);
 
   return (
-   
     <TranslationsProvider resources={resources} locale={locale} namespaces={i18nNamespaces}>
     <main>
      
@@ -46,13 +41,13 @@ useEffect(() => {
           <div className="section-row">
             <div>
               <h2>Endre bilde:</h2>
-              <input type='file' />
-              <button >Bytt bilde</button>
+              <input type='file'/>
+              <button>Bytt bilde</button>
             </div>
           </div>
         </section>
         </>
-      ) } 
+      )}
       
       <section>
         <div className="section-row">
