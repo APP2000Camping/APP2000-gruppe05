@@ -16,7 +16,6 @@ export default function FAQ({ params: { locale } }) {
   const [resources, setResources] = useState({});
   const [articles, setArticles] = useState([]);
   const [editingIndex, setEditingIndex] = useState(-1);
-  const backgroundImageUrl = 'https://media.istockphoto.com/id/1050831094/photo/family-vacation-travel-rv-holiday-trip-in-motorhome.jpg?s=2048x2048&w=is&k=20&c=uHzfAbfema-vR1Jz0PWD_9SNNt4Tmv98hfVwhL5c_KM=';
   const { data: session } = useSession();
 
   useEffect(() => {
@@ -156,7 +155,7 @@ const handleDeleteArticle = async (index) => {
     <TranslationsProvider resources={resources} locale={locale} namespaces={i18nNamespaces}>
       <div className="flex flex-col min-h-screen">
         <main>
-          <div className={styles.blurBackground} style={{ backgroundImage: `url(${backgroundImageUrl})` }}></div>
+          <div className={styles.blurBackground}></div>
           {session && session.user.role === "admin" && (
             <Button onClick={handleAddArticle}>Legg til Artikkel</Button>
           )}

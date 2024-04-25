@@ -26,7 +26,7 @@
     left: 0;
     width: 100%;
     height: 15%;
-    background: linear-gradient(to top, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1));
+    background: linear-gradient(to top, rgba(255, 255, 255, 0), rgba(248, 249, 251, 1));
     pointer-events: none; 
     z-index: 1;
 }

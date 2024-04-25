@@ -8,13 +8,15 @@ import styles from './mySite.module.css';
 import { useSession } from 'next-auth/react';
 import { useEffect, useState } from 'react';
 
-const i18nNamespaces = ['Contact', 'Common'];
+
+const i18nNamespaces = ['mySite', 'Common'];
 
 export default function mySite({ params: { locale } }) {
     const { t, resources } = initTranslations(locale, i18nNamespaces);
     const { data: session } = useSession();
 
     const [bookings, setBookings] = useState([]);
+    
 
     const userEmail = session && session.user ? session.user.email : '';
     const userRole = session && session.user ? session.user.role : '';
@@ -50,36 +52,41 @@ export default function mySite({ params: { locale } }) {
         namespaces={i18nNamespaces}>
 
         {!session ? (
-            <h2>Logg inn for å se min side</h2>
+            <h2 className={styles.headerUlogget}>Logg inn for å se min side</h2>
+            
         ): (
             <div className={styles.main}>
+
                 <div>
-                    <h2>Bruker: {session.user.name}</h2>
+                    <h2>Min profil</h2>
                 </div>
-                <div>
-                    <h2>Email: {userEmail}</h2>
+                <div className={styles.Item}>
+                    <ul className={styles.booking}>
+                        <li>Navn: {session.user.name}</li>
+                        <li>Email: {userEmail}</li>
+                        <li>Telefonnummer: {userTlf}</li>
+                        <li>Min rolle: {userRole}</li>
+                    </ul>
                 </div>
+            
                 <div>
-                    <h2>TlfNr: {userTlf}</h2>
+                    <h2>Dine reservasjoner</h2>
                 </div>
-                <div>
-                    <h2>Din rolle er: {userRole}</h2>
-                </div>
-                <div>
-                    <h2>Dine booking:</h2>
+                <div className={styles.Item}>
                     <ul>
                         {bookings.length > 0 ? (
                             bookings.map((booking) => (
-                                <div key={booking._id}>
+                                <div key={booking._id} className={styles.booking}>
                                     <li>Navn: {booking.navn}</li>
-                                    <li>PlassNr: {booking.plassNr}</li>
+                                    <li>Plassnummer: {booking.plassNr}</li>
                                     <li>Type: {booking.type}</li>
-                                    <li>Dato: {booking.dato}</li>
-                                    <li>TelefonNr: {booking.tlfnr}</li>
+                                    <li>Telefonnummer:  {booking.tlfnr}</li>
+                                    <li>Startdato: {booking.dato}</li>
+                                    <li>Sluttdato {booking.dato}</li>
                                 </div> 
                             ))
                         ) : (
-                            <li>No bookings found</li>
+                            <li style={{ listStyleType: 'none' }}>Ingen reservasjoner funnet</li>
                         )}
                     </ul>
                 </div>
