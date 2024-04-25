@@ -99,8 +99,8 @@ export default function BookingPage({ params: { locale } }) {
     <div className="flex flex-col min-h-screen">
       <main className="flex-grow">
       <BookingForm handleBooking = {handleBooking} availableSites={availableSites}/>
+      <div className={styles.background}></div>
       </main>
-      <footer />
     </div>
     </TranslationsProvider> )
 };

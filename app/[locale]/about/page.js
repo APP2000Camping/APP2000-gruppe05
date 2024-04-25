@@ -2,7 +2,6 @@
 // Skrevet av Jesper
 
 import '../globals.css'; 
-import Article from '../../components/article';
 import TranslationsProvider from '../../components/TranslationsProvider';
 import initTranslations from '../../i18n';
 import Grid from '../../components/gridAbout'; 
@@ -158,7 +157,6 @@ export default function About({ params: { locale } }) {
             />
           )}
         </main>
-        <footer />
       </div>
     </TranslationsProvider>
   );

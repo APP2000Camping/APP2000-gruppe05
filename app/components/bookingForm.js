@@ -59,14 +59,6 @@ export default function BookingForm({ handleBooking, availableSites }) {
               <input type="tel" id="phone" name="phone" placeholder={t('booking_phone')} required />
             </div>
             <div className={styles.bookingItem}>
-              <label htmlFor="date">{t('booking_date')}</label>
-              <input type="date" id="date" name="date" required />
-            </div>
-            <div className={styles.bookingItem}>
-              <label htmlFor="date">{t('booking_date')}</label>
-              <input type="date" id="date" name="date" required />
-            </div>
-            <div className={styles.bookingItem}>
               <label htmlFor="date">{t('booking_dateStart')}</label>
               <input type="date" id="date" name="date" required />
             </div>

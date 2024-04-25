@@ -181,7 +181,6 @@ const handleDeleteArticle = async (index) => {
             ))}
           </Accordion>
         </main>
-        <footer />
       </div>
     </TranslationsProvider>
   );

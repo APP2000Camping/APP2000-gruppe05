@@ -1,6 +1,6 @@
 // components/Grid.js
 import React from 'react';
-import styles from './grid.module.css';
+import styles from './gridService.module.css';
 import Article from './article';
 import { useTranslation } from 'react-i18next';
 
@@ -11,7 +11,7 @@ export default function Grid({ articles, onEdit }) {
   
   return (
     <div className={styles.backgroundContainer}>
-      <div className={styles.blurBackground}></div>
+      <div className={styles.blurBackgroundS}></div>
       <div className={styles.gridContainer}>
       <div className={styles.overlayGrid}>
                 <h2 className={styles.title}>{t('service_title')}</h2>
