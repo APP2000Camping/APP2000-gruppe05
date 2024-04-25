@@ -8,7 +8,6 @@ import styles from './mySite.module.css';
 import { useSession } from 'next-auth/react';
 import { useEffect, useState } from 'react';
 
-
 const i18nNamespaces = ['mySite', 'Common'];
 
 export default function mySite({ params: { locale } }) {
@@ -17,7 +16,6 @@ export default function mySite({ params: { locale } }) {
 
     const [bookings, setBookings] = useState([]);
     
-
     const userEmail = session && session.user ? session.user.email : '';
     const userRole = session && session.user ? session.user.role : '';
     const userTlf = session && session.user ? session.user.tlf : '';
