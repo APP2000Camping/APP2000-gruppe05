@@ -163,7 +163,6 @@ export default function About({ params: { locale } }) {
             />
           )}
         </main>
-        <footer />
       </div>
     </TranslationsProvider>
   );

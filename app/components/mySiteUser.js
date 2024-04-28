@@ -16,7 +16,6 @@ export default function User({ userData, orderData }) {
           <div className={styles.userInfo}>
             <p><strong>{t('mysite_email')}:</strong> {userEmail}</p>
             <p><strong>{t('mysite_telephone')}:</strong> {userTelephone}</p>
-            <p><strong>{t('mysite_password')}:</strong> {userPassword}</p>
           </div>
         </section>
       </div>
@@ -27,7 +26,6 @@ export default function User({ userData, orderData }) {
           <div className={styles.userInfo}>
             <p><strong>{t('mysite_order_')}:</strong> {orderEmail}</p>
             <p><strong>{t('mysite_order_')}:</strong> {orderTelephone}</p>
-            <p><strong>{t('mysite_order_')}:</strong> {orderPassword}</p>
           </div>
         </section>
       </div>

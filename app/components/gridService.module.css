@@ -6,7 +6,7 @@
   
 }
 
-.blurBackground {
+.blurBackgroundS {
   background-image: url('../../public/images/photo2.jpg');
   position: fixed;
   top: 0;
@@ -50,11 +50,11 @@
   box-shadow: 0 0px 2px rgba(0, 0, 0, 0.8);
 }
 
-.gridItem h2,
+.gridItem h1,
 .gridItem p {
   margin-top: 0;
-  text-align: center; 
   height: auto;
+  text-align: center;
 }
 
 
