@@ -1,4 +1,4 @@
-// components/GridAbout.js
+// Skrevet av Sondre
 import React from 'react';
 import styles from './grid.module.css';
 import Article from './article';

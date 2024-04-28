@@ -1,3 +1,4 @@
+// Skrevet av Sondre
 export function parseHtmlToTitle(htmlContent) {
     const doc = new DOMParser().parseFromString(htmlContent, 'text/html');
     let title;

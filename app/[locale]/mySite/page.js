@@ -1,5 +1,5 @@
 'use client'
-// Laget av Rolf
+// Skrevet av Rolf
 
 import React from 'react';
 import TranslationsProvider from '../../components/TranslationsProvider';

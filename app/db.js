@@ -1,5 +1,4 @@
 'use server'
-
 // Skrevet av Rolf
 import { MongoClient } from "mongodb";
 

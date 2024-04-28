@@ -1,4 +1,5 @@
 "use client";
+// Skrevet av Sondre
 import React, { useState, useEffect } from 'react';
 import { Button } from '@nextui-org/react';
 import TranslationsProvider from '../../components/TranslationsProvider';
@@ -8,8 +9,6 @@ import ArticleEditor from '../../components/editingComponent';
 import { parseHtmlToTitle } from '@/app/components/parser';
 import DOMPurify from 'dompurify';
 import { useSession } from 'next-auth/react';
-
-
 
 const i18nNamespaces = ['Services', 'Common'];
 
