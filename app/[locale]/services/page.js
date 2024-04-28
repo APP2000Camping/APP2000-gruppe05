@@ -169,7 +169,6 @@ export default function Services ({ params:{locale}}) {
                 )}
                 
             </main>
-            <footer />
         </div>
     </TranslationsProvider>
   );
