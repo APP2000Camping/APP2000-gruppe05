@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './grid.module.css'; 
+import styles from './gridService.module.css'; 
 import Article from './article';
 import { useTranslation } from 'react-i18next';
 
