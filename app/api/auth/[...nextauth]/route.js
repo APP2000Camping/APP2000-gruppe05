@@ -38,7 +38,7 @@ export const authOptions = {
     }),
   ],
   callbacks: {
-    session: async ({ session }) => {
+    session: async ({ session }) => { // Bruker session callback til å gjømme ting hvis bruker ikke er admin, eller om brukeren ikke er logget inn
       try {
         if (session?.user?.email) {
           const { email } = session.user;
