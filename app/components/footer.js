@@ -1,3 +1,5 @@
+/*Skrevet av Jesper*/
+//footer-komponent 
 'use client'
 import React from 'react';
 import Link from 'next/link';
@@ -5,28 +7,29 @@ import styles from './footer.module.css';
 import LanguageSwitcher from './LanguageSwitcher';
 import { useTranslation } from 'react-i18next';
 
+
 export default function Footer() {
   const {t} = useTranslation();
   return (
     <footer className={styles.footer}>
       <div className={styles.container}>
         <div className={styles.row}>
-          <div className={styles['footer-col']}>
+          <div className={styles['footer-col']}> 
           <h4>Campingplass1</h4>
             <ul className={styles.footList}>
               <li className={styles.navItem}>
                   <Link href="/about" passHref>
-                  {t('footer_about')}
+                  {t('footer_about')} {/*Her brukes use translation på key footer_about for å hente fra i18Nexus-databasen*/}
                   </Link>
               </li>
               <li className={styles.footItem}>
                  <Link href="/services" passHref>
-                 {t('footer_services')}
+                 {t('footer_services')} {/*Her brukes use translation på key footer_about for å hente fra i18Nexus-databasen*/}
                  </Link>
               </li>
               <li className={styles.footItem}>
                   <Link href="/contact" passHref>
-                  {t('footer_contact')}
+                  {t('footer_contact')} {/*Her brukes use translation på key footer_about for å hente fra i18Nexus-databasen*/}
                   </Link>
               </li>
               

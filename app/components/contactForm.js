@@ -1,3 +1,5 @@
+/*Skrevet av Jesper*/
+
 'use client'
 
 // components/BookingForm.js
@@ -12,8 +14,8 @@ export default function ContactForm() {
 
   return (
     <div className={styles.container}>
-      <h1 className={styles.title}>{t('contact_us')}</h1>
-      <h2 className={styles.title}>{t('contact_p')}</h2>
+      <h1 className={styles.title}>{t('contact_us')}</h1> {/*Her brukes use translation på key footer_about for å hente fra i18Nexus-databasen*/}
+      <h2 className={styles.title}>{t('contact_p')}</h2> {/*Her brukes use translation på key footer_about for å hente fra i18Nexus-databasen*/}
          <div className={styles.contactForm}>
         <div className={styles.formWrapper}>
         <form>

@@ -1,3 +1,5 @@
+/*Skrevet av Jesper fra i18Nexus*/
+
 import { createInstance } from 'i18next';
 import { initReactI18next } from 'react-i18next/initReactI18next';
 import resourcesToBackend from 'i18next-resources-to-backend';

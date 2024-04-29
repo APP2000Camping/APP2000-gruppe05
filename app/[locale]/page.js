@@ -1,3 +1,5 @@
+/*Skrevet av Jesper/Rolf*/
+
 "use client";
 import './globals.css';
 import TranslationsProvider from '../components/TranslationsProvider';
@@ -7,7 +9,7 @@ import initTranslations from '../i18n';
 import { useSession } from 'next-auth/react';
 import React, { useState, useEffect } from 'react';
 
-const i18nNamespaces = ['Home', 'Common'];
+const i18nNamespaces = ['Home', 'Common']; // bestemmer hvilke namespaces som skal bli brukt fra i18nexus for denne filen
 
 export default function Home({ params:{locale}}) {
   const [t, setT] = useState(() => (key) => key);

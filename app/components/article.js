@@ -1,3 +1,4 @@
+/*Skrevet av Jesper/Sondre*/
 import React from 'react';
 import styles from './article.module.css';
 import {Button} from '@nextui-org/react';

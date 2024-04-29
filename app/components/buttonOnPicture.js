@@ -1,3 +1,5 @@
+/*Skrevet av Jesper*/
+
 'use client'
 import React from 'react';
 import Picture from './picture';
@@ -10,7 +12,7 @@ export default function ButtonOnPicture() {
     return (
         <div className={styles.buttonOnPicture}>
             <div className={styles.overlay}>
-                <h2 className={styles.title}>{t('home_title')}</h2>
+                <h2 className={styles.title}>{t('home_title')}</h2> {/*Her brukes use translation på key footer_about for å hente fra i18Nexus-databasen*/}
                 <h1 className={styles.heading}>Campingplass1</h1>
             </div>
             <Picture />

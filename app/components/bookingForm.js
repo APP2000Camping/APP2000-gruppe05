@@ -1,4 +1,5 @@
-// components/BookingForm.js
+
+/*Skrevet av Jesper/Sondre*/
 
 import React from 'react';
 import styles from './bookingForm.module.css';

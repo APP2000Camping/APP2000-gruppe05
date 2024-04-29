@@ -1,3 +1,6 @@
+/*Skrevet av Jesper fra i18Nexus*/
+// komponent for å sette en ramme hvor ting som skal oversettes må legges innenfor
+
 "use client"
 
 import { I18nextProvider, initReactI18next } from "react-i18next";

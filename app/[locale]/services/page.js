@@ -11,7 +11,7 @@ import { useSession } from 'next-auth/react';
 
 
 
-const i18nNamespaces = ['Services', 'Common'];
+const i18nNamespaces = ['Services', 'Common']; // bestemmer hvilke namespaces som skal bli brukt fra i18nexus for denne filen
 
 export default function Services ({ params:{locale}}) {
   const [t, setT] = useState(() => (key) => key);

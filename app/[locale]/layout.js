@@ -1,13 +1,14 @@
+/*Skrevet av Jesper*/
+
 import './globals.css';
 import NavBar from '../components/nav-bar';
 import Footer from '../components/footer';
-import {Providers} from "./nextUIprovider";
+
 import initTranslations from '../i18n';
 import TranslationsProvider from '../components/TranslationsProvider';
-import { getServerSession } from 'next-auth';
 import SessionProvider from '../utils/SessionProvider'
 
-const i18nNamespaces = ['Common', 'Home'];
+const i18nNamespaces = ['Common', 'Home']; // bestemmer hvilke namespaces som skal bli brukt fra i18nexus for denne filen
 
 export const metadata = {
   title: 'Camping nettside',

@@ -1,3 +1,5 @@
+// Skrevet av Jesper/sondre
+
 'use client';
 import React, { useState, useEffect } from 'react';
 import '../globals.css';
@@ -99,7 +101,8 @@ export default function BookingPage({ params: { locale } }) {
     <div className="flex flex-col min-h-screen">
       <main className="flex-grow">
       <BookingForm handleBooking = {handleBooking} availableSites={availableSites}/>
-      <div className={styles.background}></div>
+      {/* For å legge inn bakgrunnsbilde*/ }
+      <div className={styles.background}></div> 
       </main>
     </div>
     </TranslationsProvider> )

@@ -1,3 +1,5 @@
+/*Skrevet av Jesper/Rolf*/
+
 'use client';
 
 import Link from 'next/link';
@@ -7,7 +9,7 @@ import { signOut, useSession } from 'next-auth/react';
 
 export default function NavBar() {
   const { data: session } = useSession();
-  const {t} = useTranslation();
+  const {t} = useTranslation(); //funksjon for å bruke oversetting
   return (
     <nav className={styles.navBar}>
         <div className={styles.logo}>

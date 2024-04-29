@@ -1,4 +1,6 @@
-// components/GridAbout.js
+/*Skrevet av Jesper*/
+//gridkomponent for about-sida
+
 import React from 'react';
 import styles from './gridAbout.module.css';
 import Article from './article';

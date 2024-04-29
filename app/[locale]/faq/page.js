@@ -1,3 +1,5 @@
+// Skrevet av Sondre
+
 'use client';
 import React, { useState, useEffect } from 'react';
 import { Button, Accordion, AccordionItem } from '@nextui-org/react';
@@ -9,7 +11,7 @@ import initTranslations from '../../i18n';
 import { parseHtmlToTitle } from '@/app/components/parser';
 import { useSession } from 'next-auth/react';
 
-const i18nNamespaces = ['FAQ', 'Common'];
+const i18nNamespaces = ['FAQ', 'Common']; // bestemmer hvilke namespaces som skal bli brukt fra i18nexus for denne filen
 
 export default function FAQ({ params: { locale } }) {
   const [t, setT] = useState(() => (key) => key);

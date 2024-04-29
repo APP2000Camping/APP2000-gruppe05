@@ -1,3 +1,6 @@
+/*Skrevet av Jesper*/
+// komponent for å bruke bilder
+
 'use client'
 import React from "react";
 import PropTypes from 'prop-types';
