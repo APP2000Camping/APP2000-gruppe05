@@ -4,12 +4,17 @@ import React from 'react';
 import styles from './bookingForm.module.css';
 import { useTranslation } from 'react-i18next';
 
+// BookingForm-komponenten som tar imot props: handleBooking og availableSites
 export default function BookingForm({ handleBooking, availableSites }) {
+  // Bruker useTranslation-hooken fra react-i18next for å få tilgang til oversettelser
   const { t } = useTranslation();
 
+  // Funksjon for å håndtere innsending av skjema
   const handleSubmit = (event) => {
     event.preventDefault();
+   
     const formData = new FormData(event.target);
+    
     const bookingData = {
       plassNr: formData.get('PlassNr'),
       type: formData.get('type'),
@@ -19,6 +24,7 @@ export default function BookingForm({ handleBooking, availableSites }) {
       fraDato: formData.get('date'),
       tilDato: formData.get('date')
     };
+    // Kaller handleBooking-funksjonen med bookingData som argument
     handleBooking(bookingData);
   };
 
