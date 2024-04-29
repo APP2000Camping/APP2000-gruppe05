@@ -18,8 +18,6 @@ export async function DELETE(request) {
       });
     }
 
-    
-
     const deletionResult = await articles.deleteOne({ _id: new ObjectId(id) });
     if (deletionResult.deletedCount === 0) {
       return new Response(JSON.stringify({ error: 'Booking ikke funnet eller allerede slettet' }), {

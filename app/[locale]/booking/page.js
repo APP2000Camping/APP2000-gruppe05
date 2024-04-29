@@ -5,6 +5,7 @@ import '../globals.css';
 import BookingForm from '../../components/bookingForm';
 import TranslationsProvider from '../../components/TranslationsProvider';
 import initTranslations from '../../i18n';
+import styles from './booking.module.css';
 
 const i18nNamespaces = ['Booking', 'Common'];
 
