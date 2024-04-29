@@ -1,4 +1,4 @@
-/*Skrevet av Jesper*/
+/*Skrevet av Jesper/Sondre*/
 //gridkomponent for about-sida
 
 import React from 'react';

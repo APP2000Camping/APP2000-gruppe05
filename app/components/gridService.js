@@ -1,4 +1,4 @@
-/*Skrevet av Jesper*/
+/*Skrevet av Jesper/Sondre*/
 // gridkomponent for service-sida
 import React from 'react';
 import styles from './gridService.module.css';
