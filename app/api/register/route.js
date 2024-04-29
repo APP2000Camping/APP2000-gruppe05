@@ -18,14 +18,14 @@ export async function POST(req) {
         })
     }
 
-    const hashedPassword = await bcrypt.hash(password, 5);
+    const hashedPassword = await bcrypt.hash(password, 5); // salter passordet 5 ganger gjennom bcryptjs
 
     const doc = {
       email,
       hashedPassword,
       name,
       tlf,
-      role: "user",
+      role: "user", // Alle brukere som blir laget på nettsiden er "user"
     }
 
     const result = await users.insertOne(doc);

@@ -1,4 +1,4 @@
-// app/api/delArticle/route.js
+// Skrevet av Sondre / Marcus
 
 import { getClient } from "@/app/utils/db";
 import { ObjectId } from "mongodb";
@@ -17,8 +17,6 @@ export async function DELETE(request) {
         headers: { 'Content-Type': 'application/json' }
       });
     }
-
-    
 
     const deletionResult = await articles.deleteOne({ _id: new ObjectId(id) });
     if (deletionResult.deletedCount === 0) {

@@ -1,5 +1,5 @@
 'use client'
-// Laget av Rolf
+// Skrevet av Rolf / Jesper
 
 import React from 'react';
 import TranslationsProvider from '../../components/TranslationsProvider';
@@ -16,13 +16,12 @@ export default function mySite({ params: { locale } }) {
 
     const [bookings, setBookings] = useState([]);
     
+    // Henter email, rolle og tlfnr fra session, hentes utenfor useEffect sånn session ikke er tom når den blir hentet
     const userEmail = session && session.user ? session.user.email : '';
     const userRole = session && session.user ? session.user.role : '';
     const userTlf = session && session.user ? session.user.tlf : '';
-    const sessionUser = session;
 
     useEffect(() => {
-        console.log("session =", sessionUser);
         const fetchBookings = async () => {
             try {
                 if (userEmail) {

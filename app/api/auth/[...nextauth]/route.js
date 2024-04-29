@@ -1,6 +1,5 @@
 // Skrevet av Rolf
 import NextAuth from "next-auth"
-//import GithubProvider from "next-auth/providers/github"
 import CredentialsProvider from "next-auth/providers/credentials"
 import bcrypt from "bcryptjs";
 import { getClient } from "@/app/utils/db";
@@ -11,9 +10,8 @@ const database = await getClient();
 const users = database.collection("users");
 
 export const authOptions = {
-  secret: process.env.NEXT_AUTH_SECRET,
   providers: [
-    CredentialsProvider({
+    CredentialsProvider({ // Custom Credentials Provider
         id: "credentials",
         name: "Credentials",
         credentials: {
@@ -24,8 +22,7 @@ export const authOptions = {
             try {
                 const user = await users.findOne({email: credentials.email});
                 if (user) {
-                    //console.log(user)
-                    const isPasswordCorrect = await bcrypt.compare(
+                    const isPasswordCorrect = await bcrypt.compare( // Innebygd kryptert passord sjekk
                         credentials.password,
                         user.hashedPassword,
                     )
@@ -41,11 +38,11 @@ export const authOptions = {
     }),
   ],
   callbacks: {
-    session: async ({ session }) => {
+    session: async ({ session }) => { // Bruker session callback til å gjømme ting hvis bruker ikke er admin, eller om brukeren ikke er logget inn
       try {
         if (session?.user?.email) {
           const { email } = session.user;
-          const role = await getRoleByEmail(email);
+          const role = await getRoleByEmail(email); // Legger til rolle og tlfnr, sånn man kan hente det ut fra session
           const tlf = await getTlfByEmail(email);
 
           session.user = {

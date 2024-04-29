@@ -1,4 +1,4 @@
-//app/api/putArticle/route.js
+// Skrevet av Sondre
 import { getClient } from "@/app/utils/db";
 import { ObjectId } from "mongodb";
 

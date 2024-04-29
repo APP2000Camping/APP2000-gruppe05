@@ -1,4 +1,4 @@
-// Skrevet av Rolf
+// Skrevet av Sondre / Marcus
 import { getClient } from "@/app/utils/db";
 
 const database = await getClient();

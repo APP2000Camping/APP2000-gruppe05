@@ -1,5 +1,5 @@
 "use client";
-//Skrevet av Rolf
+// Skrevet av Rolf
 
 import '../globals.css';
 import styles from '../../components/form.module.css';
@@ -18,12 +18,12 @@ export default function Home() {
     
     useEffect(() => {
         if (session?.status === "authenticated") {
-            router.replace("/");
+            router.replace("/"); // Sendes til home page vist man allerede er logget inn
         }
     }, [session, router])
 
     const isValidEmail = (email) => {
-        const emailRegex = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i;
+        const emailRegex = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i; // Regex for validering av email format
         return emailRegex.test(email);
     };
 
