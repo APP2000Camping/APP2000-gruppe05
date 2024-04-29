@@ -4,6 +4,7 @@ import { MongoClient } from "mongodb";
 
 let database;
 
+// Henter mongclienten og databasen som skal bli brukt i api-ene
 export async function getClient() {
     if (!database) {
         const client = new MongoClient(process.env.MONGODB_URI);

@@ -1,4 +1,5 @@
 "use client";
+// Skrevet av Jesper / Sondre
 import './globals.css'; 
 import TranslationsProvider from '../components/TranslationsProvider';
 import initTranslations from '../i18n';

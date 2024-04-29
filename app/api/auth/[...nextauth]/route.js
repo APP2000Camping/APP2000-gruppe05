@@ -10,9 +10,8 @@ const database = await getClient();
 const users = database.collection("users");
 
 export const authOptions = {
-  secret: process.env.NEXT_AUTH_SECRET,
   providers: [
-    CredentialsProvider({
+    CredentialsProvider({ // Custom Credentials Provider
         id: "credentials",
         name: "Credentials",
         credentials: {
@@ -23,8 +22,7 @@ export const authOptions = {
             try {
                 const user = await users.findOne({email: credentials.email});
                 if (user) {
-                    //console.log(user)
-                    const isPasswordCorrect = await bcrypt.compare(
+                    const isPasswordCorrect = await bcrypt.compare( // Innebygd kryptert passord sjekk
                         credentials.password,
                         user.hashedPassword,
                     )
@@ -44,7 +42,7 @@ export const authOptions = {
       try {
         if (session?.user?.email) {
           const { email } = session.user;
-          const role = await getRoleByEmail(email);
+          const role = await getRoleByEmail(email); // Legger til rolle og tlfnr, sånn man kan hente det ut fra session
           const tlf = await getTlfByEmail(email);
 
           session.user = {
