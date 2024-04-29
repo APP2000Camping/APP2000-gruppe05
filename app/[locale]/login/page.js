@@ -1,5 +1,5 @@
 "use client";
-//Skrevet av Rolf
+// Skrevet av Rolf
 
 import '../globals.css';
 import styles from '../../components/form.module.css';
