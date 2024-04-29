@@ -1,3 +1,4 @@
+// Skrevet av Sondre / Jesper
 import React from 'react';
 import styles from './article.module.css';
 import {Button} from '@nextui-org/react';

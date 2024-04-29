@@ -1,16 +1,20 @@
-'use client';
-import React, { useState, useEffect } from 'react';
-import '../globals.css';
-import BookingForm from '../../components/bookingForm';
-import TranslationsProvider from '../../components/TranslationsProvider';
-import initTranslations from '../../i18n';
-import styles from '../booking/booking.module.css';
+"use client";
+// Skrevet av Sondre
+import React, { useState, useEffect } from "react";
+import "../globals.css";
+import BookingForm from "../../components/bookingForm";
+import TranslationsProvider from "../../components/TranslationsProvider";
+import initTranslations from "../../i18n";
+import styles from "./booking.module.css";
 
-const i18nNamespaces = ['Booking', 'Common'];
+const i18nNamespaces = ["Booking", "Common"];
 
 export default function BookingPage({ params: { locale } }) {
   const [booking, setBooking] = useState([]);
-  const [translations, setTranslations] = useState({ t: () => '', resources: {} });
+  const [translations, setTranslations] = useState({
+    t: () => "",
+    resources: {},
+  });
   const [availableSites, setAvailableSites] = useState([]);
 
 
@@ -110,17 +114,20 @@ const handleBooking = async (bookingData) => {
 
 
   return (
-    <TranslationsProvider 
-      resources={translations.resources} 
-      locale={locale} 
-      namespaces={i18nNamespaces}>
-    <div className="flex flex-col min-h-screen">
-      <main className="flex-grow">
-      <BookingForm handleBooking = {handleBooking} availableSites={availableSites}/>
-      <div className={styles.background}></div>
-      </main>
-    </div>
-    </TranslationsProvider> )
-};
-
-
+    <TranslationsProvider
+      resources={translations.resources}
+      locale={locale}
+      namespaces={i18nNamespaces}
+    >
+      <div className="flex flex-col min-h-screen">
+        <main className="flex-grow">
+          <BookingForm
+            handleBooking={handleBooking}
+            availableSites={availableSites}
+          />
+          <div className={styles.background}></div>
+        </main>
+      </div>
+    </TranslationsProvider>
+  );
+}

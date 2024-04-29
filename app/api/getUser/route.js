@@ -1,4 +1,4 @@
-// Modifisert av Rolf
+// Skrevet av Sondre
 import { getClient } from "@/app/db";
 
 async function getUserByEmail(email) {
@@ -8,7 +8,7 @@ async function getUserByEmail(email) {
     const user = await users.findOne(query);
     return user;
 }
-
+// Ekstra get function for role og email -Rolf
 export async function getRoleByEmail(email) {
     const database = await getClient();
     const users = database.collection('users');

@@ -1,4 +1,5 @@
 'use client';
+// Skrevet av Sondre
 import React, { useState, useEffect } from 'react';
 import { Button, Accordion, AccordionItem } from '@nextui-org/react';
 import ArticleEditor from '../../components/editingComponent';

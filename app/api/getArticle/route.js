@@ -1,4 +1,4 @@
-// app/api/getArticle.js
+// Skrevet av Sondre
 import { getClient } from "@/app/db"; 
 
 async function getArticlesBySection(section) {

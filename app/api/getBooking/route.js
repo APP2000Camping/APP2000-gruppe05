@@ -1,4 +1,4 @@
-// app/api/getBooking.js
+// Skrevet av Sondre / Marcus
 import { getClient } from "@/app/db";
 
 export async function getBookingsByEmail(email) {
